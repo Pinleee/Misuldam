@@ -1,12 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전통주</title>
+
+    <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/css/layout.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/css/content.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="${pageContext.request.contextPath}/js/content.js"></script>
 </head>
 <body>
 
-</body>
-</html>
+    <div class="container">
+
+        <header id="header">
+            <div class="headerCont">
+                <h1 class="logo">미술담</h1>
+                <div class="navWrap">
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="">약 · 청주</a></li>
+                            <li><a href="">탁주</a></li>
+                            <li><a href="">증류주</a></li>
+                            <li><a href="">과실주</a></li>
+                            <li><a href="">기타주류</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="utillWrap">
+                    <button><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
+                    <button><i class="fas fa-heart"></i><span>위시리스트</span></button>
+                    <button><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
+                    <button><i class="fas fa-sign-in-alt"></i><span>로그인</span></button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="innerWrap">

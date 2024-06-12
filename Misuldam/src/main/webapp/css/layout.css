@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'SangSangRock';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.container{width:100%}
+
+#header{width:100%;padding:50px 50px;position:absolute;top:0;left:0;color:#fff}
+.headerCont{width:100%;display:flex;font-size:19px;justify-content:space-between;align-items:center;}
+.headerCont h1{font-family:"SangSangRock" !important;font-size:60px;}
+
+.navWrap #nav ul{display:flex;}
+.navWrap #nav ul li{padding:0 50px}
+.navWrap #nav ul li a{color:#fff}
+
+.utillWrap button:not(:last-child){padding-right:14px}
+.utillWrap button span{color:#eee;font-size:12px;padding-top:10px}
+.utillWrap i{color:#fff;font-size:16px;display:block;}
+
+.innerWrap{width:100%;}
+.visualWrap{background:#252423;}
+.visualWrap video{width:100%;height:100%;}
+.visualTxt{font-size:80px;color:#eee;position:absolute;top:50%;left:30%;transform:translate(-50%,-50%);font-weight:600;}
+
+.assortWrap{background:#252423;}
+.assortWrap .assortInner{width:100%;max-width:1500px;margin:0 auto;padding:150px 0}
+.assortWrap .assortInner h3{color:#ae874e;font-size:46px;padding:20px 0 15px 0;font-weight:600;}
+.assortWrap .assortInner h4{color:#eee;font-size:26px;font-weight:500;}
+
+
+.assortWrap .assortInner .assortCont{padding-top:100px}
+.assortCont .assortDepth{text-align:center;display:flex;}
+.assortWrap .assortInner .assortDepth li{color:#fff;font-size:22px;padding:0 50px 50px 0;cursor:pointer;}
+.assortDepth .active{text-decoration:underline;color:#ae874e !important;font-weight:bold;text-underline-position:under;}
+
+.assortCont .assortList{}
+.assortCont .assortList li{display:flex;display:none;}
+.assortCont .assortList li img{border-radius:10% 33% 5% 38% / 0% 56% 0% 48%;}
+.assortCont .assortList li p{color:#fafcf3;font-size:19px;width:700px;word-break:keep-all;line-height:1.5;padding:70px 0 0 100px}
+
+.assortCont .assortList .depC01{display:flex;}
