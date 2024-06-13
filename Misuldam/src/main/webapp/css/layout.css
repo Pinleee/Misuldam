@@ -6,7 +6,7 @@
 }
 .container{width:100%}
 
-#header{width:100%;padding:50px 50px;position:absolute;top:0;left:0;color:#fff;z-index:99}
+#header{width:100%;padding:50px 50px;position:absolute;top:0;left:0;color:#fff;z-index:99;}
 .headerCont{width:100%;display:flex;font-size:19px;justify-content:space-between;align-items:center;}
 .headerCont h1{font-family:"SangSangRock" !important;font-size:60px;}
 
@@ -14,15 +14,18 @@
 .navWrap #nav ul li{padding:0 50px}
 .navWrap #nav ul li a{color:#fff}
 
+.utillWrap button{cursor:pointer;}
 .utillWrap button:not(:last-child){padding-right:14px}
 .utillWrap button span{color:#eee;font-size:12px;padding-top:10px}
 .utillWrap i{color:#fff;font-size:16px;display:block;}
 
 .innerWrap{width:100%;}
 .visualWrap{background:#252423;}
-.visualWrap video{width:100%;height:100%;}
+.visualWrap video{width:100vw;height:100vh;object-fit:fill;}
 .visualTxt{font-size:80px;color:#eee;position:absolute;top:50%;left:30%;transform:translate(-50%,-50%);font-weight:600;}
 
+
+/*********술소개*********/
 .assortWrap{background:#252423;}
 .assortWrap .assortInner{width:100%;max-width:1500px;margin:0 auto;padding:150px 0}
 .assortWrap .assortInner h3{color:#ae874e;font-size:46px;padding:20px 0 15px 0;font-weight:600;}
@@ -40,3 +43,33 @@
 .assortCont .assortList li p{color:#fafcf3;font-size:19px;width:700px;word-break:keep-all;line-height:1.5;padding:70px 0 0 100px}
 
 .assortCont .assortList .depC01{display:flex;}
+
+/**********footer***********/
+.footWrap{width:100%;padding:60px 0;background:#091114;}
+.footWrap #footer{width:100%;max-width:1500px;margin:0 auto;display:flex;color:#f8f7f4;justify-content: space-between;align-items:center;}
+
+#footer .leftCon{display:flex;align-items:flex-end;}
+.leftCon .fLogo{font-family:"SangSangRock" !important;font-size:55px;color:#898989;}
+.leftCon p{padding:0 0 10px 20px;color:#898989}
+
+.rightCon ul{display:flex;}
+.rightCon ul li:not(:last-child){padding:0 30px;position:relative;}
+.rightCon ul li:first-child::after{content:"";width:2px;height:80%;background:#898989;position:absolute;top:4px;right:10%}
+.rightCon ul li:last-child a{color:#fff}
+.rightCon ul li a{color:#898989}
+
+/**********제품소개*********/
+.prodWrap{width:100%;height:100vh;background:url(../images/bg.jpg) 0 0 no-repeat;background-size:cover;}
+.prodCont{width:100%;max-width:1500px;margin:0 auto;padding:150px 0}
+.prodCont h3{color:#ae874e;font-size:46px;padding:20px 0 15px 0;font-weight:600;}
+.prodCont h4{color:#252423;font-size:26px;font-weight:500;}
+
+.prodCont .prodSlide{display:flex;padding-top:120px}
+.prodCont .prodSlide li:not(:last-child){margin-right:30px}
+.prodCont .prodSlide li img{border-radius:50%;box-shadow:0px 3px 7px 0px rgba(107, 107, 107, 0.2);}
+.prodCont .prodSlide li h5{text-align:center;padding:30px 10px 0 10px;font-size:18px;word-break:keep-all;line-height:1.3;}
+
+.slick-arrow{text-indent:-99999px;width:30px;height:70px;position:absolute;top:60%;transform:translate(-50%, -50%);z-index:9;cursor:pointer;}
+.slick-prev{background:url(../images/ico_pre.png) center center no-repeat;left:0}
+.slick-next{background:url(../images/ico_next.png) center center no-repeat;right:0}
+

@@ -46,14 +46,48 @@
                 </ul>
             </div>
         </div>
+     </div><!-- //assortWrap -->
+        
+  		<div class="prodWrap">
+              <div class="prodCont">
+                  <h3 data-aos="fade-right" data-aos-duration="1000">전통주 메뉴</h3>
+                  <h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">미술담에서 판매하는 Best Menu를 확인하세요.</h4>
+                  
+                  <ul class="prodSlide">
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod01.jpg" alt="술이미지" />
+                          <h5>제주샘주 니모메11도 375ml<br /> 제주 감귤 전통주</h5>
+                      </li>
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod02.jpg" alt="술이미지" />
+                          <h5>양촌양조 양촌 우렁이쌀 청주 14도 <br />500ml 무농약쌀 무감미료</h5>
+                      </li>
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod03.jpg" alt="술이미지" />
+                          <h5>골목식당 골목생막걸리 12도350ml <br />백종원대표공동개발</h5>
+                      </li>
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod04.jpg" alt="술이미지" />
+                          <h5>술샘 꿀샘 16 벌꿀주 375ml</h5>
+                      </li>
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod05.jpg" alt="술이미지" />
+                          <h5>배금도가 찹쌀생막걸리 12도 <br />500ml 무감미료</h5>
+                      </li>
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod06.jpg" alt="술이미지" />
+                          <h5>영덕주조 도원결의 40도 360ml <br />복숭아 증류주</h5>
+                      </li>
+                      <li>
+                          <img src="${pageContext.request.contextPath}/images/prod07.jpg" alt="술이미지" />
+                          <h5>한강주조 무감미료 나루 생막걸리 <br />6도 800ml 경복궁쌀</h5>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+    
 
-        <div class="asList01">
-
-        </div>
-
-    </div>
-
-</div>
+</div><!-- //mainCont -->
 
 
 
