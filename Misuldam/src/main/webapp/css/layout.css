@@ -6,7 +6,7 @@
 }
 .container{width:100%}
 
-#header{width:100%;padding:50px 50px;position:absolute;top:0;left:0;color:#fff}
+#header{width:100%;padding:50px 50px;position:absolute;top:0;left:0;color:#fff;z-index:99}
 .headerCont{width:100%;display:flex;font-size:19px;justify-content:space-between;align-items:center;}
 .headerCont h1{font-family:"SangSangRock" !important;font-size:60px;}
 
