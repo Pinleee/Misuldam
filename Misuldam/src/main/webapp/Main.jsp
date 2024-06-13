@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="/Include/Header.jsp" />
+<jsp:include page="/include/Header.jsp" />
 
 <div class="mainCont">
                 
@@ -57,4 +57,4 @@
 
 
 
-<jsp:include page="/Include/Footer.jsp" />
+<jsp:include page="/include/Footer.jsp" />
