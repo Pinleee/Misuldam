@@ -1,65 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:include page="/include/Header.jsp" />
+<link rel="stylesheet" href="../css/login.css">
+<script src="../lib/jquery-3.6.0.min.js"></script>
 
-</head>
-<body>
-  <div class="login-wrap">
-    <div class="login-html">
-      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">로그인</label>
-      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">회원가입</label>
-      <div class="login-form">
-        <div class="sign-in-htm">
-          <div class="group">
-            <label for="user" class="label">사용자 이름</label>
-            <input id="user" type="text" class="input">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">비밀번호</label>
-            <input id="pass" type="password" class="input" data-type="password">
-          </div>
-          <div class="group">
-            <input id="check" type="checkbox" class="check" checked>
-            <label for="check"><span class="icon"></span> 로그인 상태 유지</label>
-          </div>
-          <div class="group">
-            <input type="submit" class="button" value="로그인">
-          </div>
-          <div class="hr"></div>
-          <div class="foot-lnk">
-            <a href="#forgot">비밀번호를 잊으셨나요?</a>
-          </div>
+<div class="mainCont">
+
+<div class="login-wrap"><!-- margin-top:160px -->
+
+   <section class="login-form">
+        <h1>로그인</h1>
+        <form action="">
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id">아이디</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label for="pw">비밀번호</label>
+            </div>
+            <div class="btn-area">
+                <button id="btn" type="submit">LOGIN</button>
+                
+            </div>
+        </form>
+        <div class="caption">
+        	<a href="">아이디 찾기</a>
+            <a href="">비밀번호 찾기</a>
+            <a href="">회원가입</a>
         </div>
-        <div class="sign-up-htm">
-          <div class="group">
-            <label for="user" class="label">사용자 이름</label>
-            <input id="user" type="text" class="input">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">비밀번호</label>
-            <input id="pass" type="password" class="input" data-type="password">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">비밀번호 재입력</label>
-            <input id="pass" type="password" class="input" data-type="password">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">이메일 주소</label>
-            <input id="pass" type="text" class="input">
-          </div>
-          <div class="group">
-            <input type="submit" class="button" value="회원가입">
-          </div>
-          <div class="hr"></div>
-          <div class="foot-lnk">
-            <label for="tab-1">이미 회원이신가요?</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+    </section>
+
+    <script>       
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+        
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                }, 1500);
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                }, 1500);
+            }
+        });
+    </script>           
+
+</div>
+
+</div>
+
+<jsp:include page="/include/Footer.jsp" />
