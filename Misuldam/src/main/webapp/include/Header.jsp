@@ -16,6 +16,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/content.js"></script>
+    
+    <!--slick-slider-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
 

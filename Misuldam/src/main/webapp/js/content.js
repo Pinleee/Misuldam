@@ -25,3 +25,13 @@ $(document).ready(function() {
     });
     
 });
+
+$(document).ready(function() {
+    $('.prodSlide').slick({
+        centerMode: true,
+        slidesToShow:4,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed:3000,
+    });
+});
