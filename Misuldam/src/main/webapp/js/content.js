@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('.assortDepth .dep01').click(function(){
         $(".assortList>li").hide();

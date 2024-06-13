@@ -14,7 +14,7 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/content.js"></script>
 </head>
 <body>
@@ -36,7 +36,7 @@
                     </nav>
                 </div>
                 <div class="utillWrap">
-                    <button><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
+                    <button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
                     <button><i class="fas fa-heart"></i><span>위시리스트</span></button>
                     <button><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
                     <button><i class="fas fa-sign-in-alt"></i><span>로그인</span></button>
