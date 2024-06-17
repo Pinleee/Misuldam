@@ -42,7 +42,8 @@ body {
 }
 
 .int-area input {
-	text-align: center; width : 100%;
+	text-align: center;
+	width: 100%;
 	padding: 20px 10px 10px;
 	background-color: transparent;
 	border: none;
@@ -96,8 +97,18 @@ body {
 }
 
 .caption a {
-	margin: 0 20px;
+	margin: 0 10px;
 	font-size: 15px;
 	color: white;
 	text-decoration: none;
+}
+
+.caption a:first-child {
+	padding-left: 0;
+}
+
+.caption a:not(:last-child)::after {
+	content: '|';
+	color: white; /* 구분자 색상도 흰색으로 설정 */
+	padding-left: 10px;
 }

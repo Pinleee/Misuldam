@@ -26,7 +26,8 @@
         <div class="caption">
         	<a href="">아이디 찾기</a>
             <a href="">비밀번호 찾기</a>
-            <a href="<%=request.getContextPath()%>/user/Join.jsp">회원가입</a> <!-- <회원가입> -->        </div>
+            <a href="<%=request.getContextPath()%>/user/JoinAgree.jsp">회원가입</a> <!-- <회원가입> -->        
+         </div>
     </section>
 
     <script>       
