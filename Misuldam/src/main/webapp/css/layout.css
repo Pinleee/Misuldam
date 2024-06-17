@@ -73,3 +73,11 @@
 .slick-prev{background:url(../images/ico_pre.png) center center no-repeat;left:0}
 .slick-next{background:url(../images/ico_next.png) center center no-repeat;right:0}
 
+/*--------paging---------*/
+.pagination{display:block;padding:100px 0 50px 0;text-align:center;}
+.pagination ul li{display:inline-block;vertical-align:top;margin:2px;padding:0;}
+.pagination ul li a{display:block;width:35px;height:35px;line-height:35px;font-size:18px;font-weight:400;color:#B9BBC5}
+.pagination ul li a.active{color:#fff;background:#aa844d;border-radius:3px;}
+.pagination ul li a.prev{width:35px;height:35px;}
+.pagination ul li a.next{width:35px;height:35px;}
+.pagination ul li a i{color:#f8f7f4;font-size:18px;}

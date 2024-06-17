@@ -1,0 +1,67 @@
+.mainCont{width:100%;}
+.subCont{width:100%;background:#091114;padding:160px 0 0 0}
+
+/**********카테고리별 메뉴*********/
+.catagWrap{margin:0 auto;min-height:100vh;background:#252423;}
+.catagCont{width:100%;max-width:1500px;margin:0 auto;padding:50px 0}
+.catagWrap h3{color:#ae874e;font-size:46px;padding:20px 0 15px 0;font-weight:600;}
+.catagWrap h4{color:#eee;font-size:26px;font-weight:500;}
+
+.menuList{border-top:1px solid #f8f7f4;margin-top:100px}
+.menuList .topUtil{padding:25px 0;display:flex;align-items:center;justify-content:space-between;position:relative;}
+.menuList .topUtil .total{color:#f8f7f4;font-weight:bold;font-size:18px;}
+.menuList .topUtil .total span{color:#aa844d;font-weight:bold;}
+.menuList .topUtil .searchBtn input{background:#f8f7f4;border:none;padding:12px 20px;border-radius:3px;}
+.menuList .topUtil .searchIco{position:absolute;top:50%;right:5px;transform:translate(-50%,-50%);}
+.menuList .topUtil .searchIco i{color:#9b9b9b;font-size:18px;}
+
+.menuList .menuCont{padding-top:20px;display:flex;flex-wrap:wrap;}
+.menuList .menuCont li{color:#f8f7f4;width:calc(100% / 4 - 45px)}
+.menuList .menuCont li:not(:nth-child(4n)){margin-right:60px}
+.menuList .menuCont li:nth-child(n+5){margin-top:60px}
+.menuList .menuCont li img{border-radius:5px;}
+.menuList .menuCont li .menuTxt{padding-top:10px}
+.menuList .menuCont li .menuTxt h4{font-size:18px;line-height:1.7;}
+.menuList .menuCont li .menuTxt h5{color:#adadad;display:block;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;padding:0 20px 0 0}
+.menuList .menuCont li .menuTxt p{padding-top:10px;font-size:19px;}
+
+
+/**********상세페이지*********/
+.detailWrap{margin:0 auto;min-height:100vh;background:#252423;}
+.detailWrap .detailCont{width:100%;max-width:1500px;margin:0 auto;padding:50px 0}
+.detailWrap .detailCont .detailProd{display:flex;padding:60px 60px}
+.detailWrap .detailCont .detailProd .imgWrap{width:calc(100% / 2 - 100px);margin-right:100px}
+.detailWrap .detailCont .detailProd .imgWrap img{width:100%;border-radius:3px;}
+.detailWrap .detailCont .detailProd .detailTxt{color:#f8f7f4;border-top:2px solid #adadad;width:calc(100% / 2 );}
+.detailProd .detailTxt h3{line-height:3.5;font-size:22px;padding-top:10px;}
+.detailProd .detailTxt .reviewLink a{color:#adadad;text-decoration:underline;}
+.detailProd .detailTxt .price{line-height:3.5;font-size:22px;}
+
+.delivery{border-top:1px solid #373737;padding:30px 0;border-bottom:1px solid #373737;display:flex;align-items:flex-start;}
+.delivery h5{line-height:1.5;padding:2px 30px 0 0;color:#adadad}
+.delivery p{line-height:1.5;}
+
+.certiCont{background:#F4F4F4;color:#000;border-radius:3px;margin-top:30px;padding:20px;display:flex;align-items:center;;}
+.certiCont .badge{border:3px solid #FF2121;display:inline-block;padding:5px;border-radius:50%;margin-right:10px}
+.certiCont .badge span{font-weight:bold;}
+.certiCont p {font-weight:500}
+
+.volume{padding:50px 0 0 0;display:flex;}
+.volume input, #volumeTotal{background:transparent;border:1px solid #adadad;color:#f8f7f4;padding:7px 15px;}
+.volume input{cursor:pointer;}
+
+.detailBtn{display:flex;padding:50px 0 0 0}
+.detailBtn button{width:calc(100% / 2);padding:15px 0;text-align:center;cursor:pointer;}
+.detailBtn .shoppingBag{margin-right:20px;border:1px solid #f8f7f4;color:#f8f7f4}
+.detailBtn .shoppingNow{background:#aa844d;color:#f8f7f4}
+
+.prodExplan{border-top:1px solid #adadad;color:#f8f7f4;margin:60px}
+.prodExplan h4{line-height:4;font-size:22px;font-weight:500;}
+.prodExplan p{font-size:17px;line-height:1.5;color:#adadad;word-break:keep-all;}
+
+.reviewWrap{border-top:2px solid #aa844d;margin:60px;color:#f8f7f4}
+.reviewWrap .reviewTop h3{line-height:4;font-size:25px;font-weight:600;color:#aa844d}
+.reviewWrap .reviewList li{padding:20px 0;border-top:1px solid #373737}
+.reviewWrap .reviewList li:last-child{border-bottom:1px solid #373737;}
+.reviewWrap .reviewList li .reviewId{padding-bottom:20px;}
+.reviewWrap .reviewList li .reviewTxt p{display:block;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;}
