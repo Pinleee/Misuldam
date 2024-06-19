@@ -7,9 +7,17 @@
 }
 
 .TextWrap{
-	background: #252423;}
+	background: #252423;
+	padding: 120px;
+	}
 
 .wish-list{
+	display:block;
+	width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.cart-list{
 	display:block;
 	width: 100%;
     max-width: 1500px;
@@ -19,22 +27,82 @@
 .list-box-all{
 	display:flex;
 	flex-wrap:wrap;
-	padding: 60px 0;
+	padding: 0px 250px;
 }
 
 .list-box{
-	width: calc(100% / 4 - 60px);
-	height: 400px;
+	width: calc(100% / 4 - 30px);
+	height: 300px;
 	background: #f8f7f4;
-	margin:0 80px 80px 0;
+	margin:0 40px 40px 0;
 	border-radius: 20px;
+	box-shadow: 5px 5px 5px #c1b4a6;
 }
 .list-box:nth-child(4n){margin:0}
 
 .wish-list li img{
 	width:100%;
-	height:50%;
+	height:60%;
 	border-top-right-radius:20px;
 	border-top-left-radius:20px;
 }
 
+.detail-list li:first-child{margin-top:20px; margin-left:20px; font-size:15px}
+.detail-list li:nth-child(2n){margin-top:20px; margin-left:20px; font-size:15px}
+.detail-list li div{display: inline; padding: 5px;}
+.wish-icon {color:red;}
+.detail-list li:nth-child(3n){margin:12px; text-align: right;}
+.detail-list li div button svg{font-size:20px;}
+
+.cart-img{
+	display: block;
+ 	width: 80%;
+  	height: 80px;
+  	margin: auto;
+}
+
+.table {
+  border-top: solid 1.5px black;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+.thead {
+  text-align: center;
+  font-weight: bold;
+}
+
+.tbody {
+  font-size: 12px;
+}
+.td {
+  padding: 15px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+.cart-button {
+  width: 420px;
+  height: 200px;
+  padding-top: 40px;
+  display: block;
+  margin: auto;
+}
+.cart-button-left {
+  background-color: white;
+  border: 1px lightgray solid;
+}
+.cart-button-right {
+  background-color: limegreen;
+  color: white;
+  border: none;
+}
+.wish-information{
+	background-color: whitesmoke;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: whitesmoke solid 1px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 300;
+	
+}
