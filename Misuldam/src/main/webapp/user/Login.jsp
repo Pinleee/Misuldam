@@ -8,7 +8,7 @@
 <div class="login-wrap"><!-- margin-top:160px -->
 
    <section class="login-form">
-        <h1>로그인</h1>
+        <h1>Misuldam</h1>
         <form action="">
             <div class="int-area">
                 <input type="text" name="id" id="id" autocomplete="off" required>
