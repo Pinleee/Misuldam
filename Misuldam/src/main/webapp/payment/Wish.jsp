@@ -1,60 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="/include/Header.jsp" />
-
 <link href="${pageContext.request.contextPath}/css/Payment.css" rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-<div class="mainCont">
-	<div class="payMain">
-	</div>
-	<div class="TextWrap">
-		<div class="wish-list">
-			<div class="wish-information">
-            <ul>
-                <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
-                <li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
-            </ul>
-       		</div>
-			<ul class="list-box-all">
-				<li class="list-box">
-					<img src="${pageContext.request.contextPath}/images/assort03.jpg">
-					<ul class="detail-list">
-						<li>일품진로</li>
-						<li>14,500원</li>
-						<li>
-							<div><button><i class="fa-solid fa-heart wish-icon"></i></i></button></div>
-							<div><button onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fa-solid fa-cart-shopping"></i></button></div>
-						</li>
-					</ul>
-				</li>
-				<li class="list-box">
-					<h3>2st Box</h3>
-				</li>
-				<li class="list-box">
-					<h3>3st Box</h3>
-				</li>
-				<li class="list-box">
-					<h3>4st Box</h3>
-				</li>
-				<li class="list-box">
-					<h3>5st Box</h3>
-				</li>
-				<li class="list-box">
-					<h3>6st Box</h3>
-				</li>
-				<li class="list-box">
-					<h3>7st Box</h3>
-				</li>
-				<li class="list-box">
-					<h3>8st Box</h3>
-				</li>
-			</ul>
-			
-				
-			
-		
-		</div>
-	</div>
-</div>
+<div class="subCont">
+   <div class="catagWrap">
+       <div class="catagCont">
+           <h3 data-aos="fade-right" data-aos-duration="1000">위시리스트</h3>
+
+           <div class="menuList">
+               <div class="topUtil">
+                   <div class="total">총 <span>6</span>건</div>
+               </div>
+               <ul class="menuCont">
+                   <li>
+                       <img src="../images/prod01.jpg" alt="제품이미지" />
+                       <button class="wishBtn" onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-heart wish-icon"></i></button>
+                       <div class="menuTxt">
+                           <h4>탁주</h4>
+                           <h5>제주샘주 니모메11도 375ml 제주 감귤 전통주</h5>
+                           <p>9,000</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="../images/prod02.jpg" alt="제품이미지" />
+                       <div class="menuTxt">
+                           <h4>탁주</h4>
+                           <h5>양촌양조 양촌 우렁이쌀 청주 14도 500ml 무농약쌀 무감미료</h5>
+                           <p>9,000</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="../images/prod03.jpg" alt="제품이미지" />
+                       <div class="menuTxt">
+                           <h4>탁주</h4>
+                           <h5>골목식당 골목생막걸리 12도350ml 백종원대표공동개발</h5>
+                           <p>9,000</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="../images/prod04.jpg" alt="제품이미지" />
+                       <div class="menuTxt">
+                           <h4>탁주</h4>
+                           <h5>술샘 꿀샘 16 벌꿀주 375ml</h5>
+                           <p>9,000</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="../images/prod05.jpg" alt="제품이미지" />
+                       <div class="menuTxt">
+                           <h4>탁주</h4>
+                           <h5>배금도가 찹쌀생막걸리 12도 500ml 무감미료</h5>
+                           <p>9,000</p>
+                       </div>
+                   </li>
+                   <li>
+                       <img src="../images/prod06.jpg" alt="제품이미지" />
+                       <div class="menuTxt">
+                           <h4>탁주</h4>
+                           <h5>영덕주조 도원결의 40도 360ml 복숭아 증류주</h5>
+                           <p>9,000</p>
+                       </div>
+                   </li>
+               </ul>
+
+               <div class="pagination">
+                   <ul>
+                       <!-- <li><a href="" class="first">첫페이지</a></li> -->
+                       <li><a href="" class="prev"><i class="fas fa-caret-left"></i></a></li>
+                       <li><a href="" class="active">1</a></li>
+                       <li><a href="">2</a></li>
+                       <li><a href="">3</a></li>
+                       <li><a href="">4</a></li>
+                       <li><a href="">5</a></li>
+                       <li><a href="" class="next"><i class="fas fa-caret-right"></i></a></li>
+                       <!-- <li><a href="" class="last">끝페이지</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div><!--/subCont-->
 
 <jsp:include page="/include/Footer.jsp" />

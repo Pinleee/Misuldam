@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="/include/Header.jsp" />
-
 <link href="${pageContext.request.contextPath}/css/Payment.css" rel="stylesheet" />
-<link href="${pageContext.request.contextPath}/css/cart.css" rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-<div class="mainCont">
-	<div class="payMain">
-	</div>
-	<div class="TextWrap">
-		<div class="cart-list">
-			<section class="cart">
+<div class="subCont">
+   <div class="catagWrap">
+       <div class="catagCont">
+           <h3 data-aos="fade-right" data-aos-duration="1000">장바구니</h3>
+
+           <div class="menuList">
+               <div class="topUtil">
+                   <div class="total">총 <span>2</span>건</div>
+               </div>
+               	<section class="cart">
         <div class="cart__information">
             <ul>
                 <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
@@ -77,8 +78,13 @@
             <button class="cart__bigorderbtn right">주문하기</button>
         </div>
     </section>
-		</div>
-	</div>
-</div>
+
+               
+            </div>
+        </div>
+    </div>
+    
+
+</div><!--/subCont-->
 
 <jsp:include page="/include/Footer.jsp" />
