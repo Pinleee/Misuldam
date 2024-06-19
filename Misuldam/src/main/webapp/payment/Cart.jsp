@@ -1,12 +1,84 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:include page="/include/Header.jsp" />
 
-</body>
-</html>
+<link href="${pageContext.request.contextPath}/css/Payment.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/css/cart.css" rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+<div class="mainCont">
+	<div class="payMain">
+	</div>
+	<div class="TextWrap">
+		<div class="cart-list">
+			<section class="cart">
+        <div class="cart__information">
+            <ul>
+                <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+                <li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
+            </ul>
+        </div>
+        <table class="cart__list">
+            <form>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">상품정보</td>
+                        <td>옵션</td>
+                        <td>상품금액</td>
+                        <td>배송비</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart__list__detail">
+                        <td><button class="cart-minus"><i class="fa-regular fa-square-minus"></i></button></td>
+                        <td><img src="${pageContext.request.contextPath}/images/assort03.jpg"></td>
+                        <td><a href="#">증류주</a>
+                            <p>일품진로 (17도)</p>
+                            <sapn class="price">14,500원</sapn>
+                        </td>
+                        <td class="cart__list__option">
+                            <p>제품명 : 일품진로 (17도) / 1개</p>
+                            <button class="cart__list__optionbtn">주문조건 추가/변경</button>
+                        </td>
+                        <td><span class="price">14,500원</span><br>
+                        </td>
+                        <td>무료</td>
+                    </tr>
+                    <tr class="cart__list__detail">
+                        <td style="width: 2%;"><button class="cart-minus"><i class="fa-regular fa-square-minus"></i></button></td>
+                        <td style="width: 13%;">
+                            <img src="${pageContext.request.contextPath}/images/assort03.jpg">
+                        </td>
+                        <td style="width: 27%;"><a href="#">증류주</a>
+                            <p>일품진로 (23도)</p>
+                            <span class=" price">28,500원</span>
+                        </td>
+                        <td class="cart__list__option" style="width: 27%;">
+                            <p>제품명 : 일품진로 (23도) / 2개</p>
+                            <button class="cart__list__optionbtn">주문조건 추가/변경</button>
+                        </td>
+                        <td style="width: 15%;"><span class="price">57,500원</span><br>
+                        </td>
+                        <td style="width: 15%;">무료</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td></td>
+                        <td>배송비 포함:</td>
+                        <td>75,000원</td>
+                    </tr>
+                </tfoot>
+            </form>
+        </table>
+        <div class="cart__mainbtns">
+            <button class="cart__bigorderbtn left">쇼핑 계속하기</button>
+            <button class="cart__bigorderbtn right">주문하기</button>
+        </div>
+    </section>
+		</div>
+	</div>
+</div>
+
+<jsp:include page="/include/Footer.jsp" />
