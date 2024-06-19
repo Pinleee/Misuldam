@@ -22,6 +22,10 @@ body {
 	max-width: 400px;
 	margin: 0 auto;
 	text-align: center;
+	height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 160px;
 }
 
 .login-form h1 {

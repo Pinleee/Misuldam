@@ -64,7 +64,7 @@
 					</li>
 				</ul>
 				<!-- <button type="submit" class="next-button" disabled>가입하기</button> -->
-				<button onClick="location.href='<%= request.getContextPath() %>/user/Login.jsp'" class="next-button">가입하기</button>
+				<button onClick="location.href='<%= request.getContextPath() %>/user/Join.jsp'" class="next-button">가입하기</button>
 			</form>
 		</div>
 	</div>
