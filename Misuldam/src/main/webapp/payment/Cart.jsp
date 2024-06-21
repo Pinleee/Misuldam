@@ -31,10 +31,10 @@
                 </thead>
                 <tbody>
                     <tr class="cart__list__detail">
-                        <td><button class="cart-minus"><i class="fa-regular fa-square-minus"></i></button></td>
+                        <td><button class="cart-minus"><i class="fas fa-minus-circle"></i></button></td>
                         <td><img src="${pageContext.request.contextPath}/images/assort03.jpg"></td>
                         <td><a href="#">증류주</a>
-                            <p>일품진로 (17도)</p>
+                            <p class="pro_name">일품진로 (17도)</p>
                             <sapn class="price">14,500원</sapn>
                         </td>
                         <td class="cart__list__option">
@@ -46,12 +46,12 @@
                         <td>무료</td>
                     </tr>
                     <tr class="cart__list__detail">
-                        <td style="width: 2%;"><button class="cart-minus"><i class="fa-regular fa-square-minus"></i></button></td>
+                        <td style="width: 2%;"><button class="cart-minus"><i class="fas fa-minus-circle"></i></button></td>
                         <td style="width: 13%;">
                             <img src="${pageContext.request.contextPath}/images/assort03.jpg">
                         </td>
                         <td style="width: 27%;"><a href="#">증류주</a>
-                            <p>일품진로 (23도)</p>
+                            <p class="pro_name">일품진로 (23도)</p>
                             <span class=" price">28,500원</span>
                         </td>
                         <td class="cart__list__option" style="width: 27%;">
@@ -75,7 +75,7 @@
         </table>
         <div class="cart__mainbtns">
             <button class="cart__bigorderbtn left">쇼핑 계속하기</button>
-            <button class="cart__bigorderbtn right">주문하기</button>
+            <button class="cart__bigorderbtn right" onClick="location.href='<%= request.getContextPath() %>/payment/Payment.jsp'">주문하기</button>
         </div>
     </section>
 

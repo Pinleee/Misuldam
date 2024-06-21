@@ -35,20 +35,25 @@ body {
     margin-bottom: 50px;
     border: whitesmoke solid 1px;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
   }
   
   .cart ul :first-child {
     color: #aa844d;
   }
-  
-  table {
-    border-top: solid 1.5px black;
+.cart__list{
+	border-top: solid 1.5px black;
     border-collapse: collapse;
     width: 100%;
-    font-size: 14px;
-  }
+    font-size: 17px;
+}
+.payment-table{
+	border-top: solid 1.5px white;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 17px;
+}
   
   thead {
     text-align: center;
@@ -59,9 +64,14 @@ body {
     font-size: 12px;
   }
   
-  td {
+ .cart td {
     padding: 15px 0px;
     border-bottom: 1px solid lightgrey;
+    color: #f5f5f5;
+  }
+  
+.pay td {
+    padding: 15px 0px;
     color: #f5f5f5;
   }
   
@@ -71,7 +81,7 @@ body {
   }
   
   .cart__list__detail :nth-child(3) a {
-    font-size: 12px;
+    font-size: 15px;
     color: #f5f5f5;
   }
   
@@ -123,6 +133,7 @@ body {
   .cart__list__detail :nth-child(5),
   .cart__list__detail :nth-child(6) {
     text-align: center;
+    font-size:13px;
   }
   
   .cart__list__detail :nth-child(5) button {
@@ -136,8 +147,8 @@ body {
   }
   
   .price {
-    font-weight: bold;
     color: #f5f5f5;
+    font-size:13px;
   }
   
   .cart__mainbtns {
@@ -196,3 +207,120 @@ body {
     right: 17px;
 }
 .wish-icon{color:red;}
+
+.pro_name{
+	font-size:14px;
+	margin-bottom:6px;
+}
+.cart__information ul li{
+	margin-bottom:3px;
+}
+
+
+.pay {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+  }
+  
+
+ .pay-text{
+ 	text-align:center;
+ }
+ 
+ .img-table tr td img{
+ 	width:200px;
+ 	height:150px;
+ }
+ .img-table-td{
+ 	width:20%;
+ }
+.pay-detail-text{
+	vertical-align:middle !important;
+}
+.payment-table tr{
+	font-size:18px;
+}
+.payment-table tr td{
+	font-size:16px;
+}
+.phone input{
+	width:70px;
+}
+
+.zip-btn{
+	width: 105px;
+    height: 25px;
+    color: black;
+    background: lightgray;
+    border: 1px lightgray solid;
+    margin-left: 10px;
+}
+.add-input input{
+	width:335px;
+}
+
+.input-box tr td input{
+	height:32px;
+}
+.select-box{
+	height:32px;
+}
+.pro-pay-text li{
+	margin-bottom: 5px;
+}
+.select-box2{
+	padding-right: 50px;
+}
+
+.fa-long-arrow-alt-right{
+	margin:35px;
+}
+
+.coupon-text span{
+	margin-right:5px;
+}
+.aste{
+	color:#ff4800;
+}
+
+.pay__bigorderbtn{
+	width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #aa844d;
+    color: white;
+    border: none;
+}
+.pay_mainbtn{
+	text-align: center;
+}
+.last-box{
+	border-bottom: solid 1.5px white;
+}
+
+.pay__bigorderbtn{
+	width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #aa844d;
+    color: white;
+    border: none;
+}
+.pay__bigorderbtn__up{
+	width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #c0c0c0;
+    color: #000;
+    border: none;
+}
+.pay__bigorderbtn__up:hover{
+	background-color: #fff;
+}
