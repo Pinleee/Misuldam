@@ -65,7 +65,7 @@ body {
   }
   
  .cart td {
-    padding: 15px 0px;
+    padding: 15px 5px;
     border-bottom: 1px solid lightgrey;
     color: #f5f5f5;
   }
@@ -323,4 +323,11 @@ body {
 }
 .pay__bigorderbtn__up:hover{
 	background-color: #fff;
+}
+.cart__list__option input{
+	width:35px;
+	text-align:center;
+}
+.count-box{
+	color: #000;
 }

@@ -34,12 +34,14 @@
                         <td><button class="cart-minus"><i class="fas fa-minus-circle"></i></button></td>
                         <td><img src="${pageContext.request.contextPath}/images/assort03.jpg"></td>
                         <td><a href="#">증류주</a>
-                            <p class="pro_name">일품진로 (17도)</p>
+                            <p class="pro_name">일품진로 (17도) / 1개</p>
                             <sapn class="price">14,500원</sapn>
                         </td>
                         <td class="cart__list__option">
-                            <p>제품명 : 일품진로 (17도) / 1개</p>
-                            <button class="cart__list__optionbtn">주문조건 추가/변경</button>
+                            <p>제품명 : 일품진로 (17도)</p>
+                            <input type="button" onclick="" value="-"/>
+                            <input type="text" onclick="" value="1" class="count-box"/>
+                            <input type="button" onclick="" value="+"/>
                         </td>
                         <td><span class="price">14,500원</span><br>
                         </td>
