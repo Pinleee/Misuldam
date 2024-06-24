@@ -55,9 +55,9 @@ public class ProductDAO {
 				dto.setCategory_id(rs.getInt("category_id"));
 				dto.setProductName(rs.getString("product_name"));
 				dto.setProductPrice(rs.getDouble("product_price"));
+				dto.setImage(rs.getString("image_url"));
 				
 				list.add(dto);
-				System.out.println(list);
 			}
 		}
 		catch (Exception e) {
@@ -69,6 +69,8 @@ public class ProductDAO {
 		
 		return list;
 	}
+	
+	//총 개수 출력
 	
 	
 	
