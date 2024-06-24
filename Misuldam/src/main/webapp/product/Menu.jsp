@@ -13,19 +13,19 @@
        			</c:when>
        			<c:when test="${cata.category_id == 2}">
        				<h3 data-aos="fade-right" data-aos-duration="1000">약 · 청주</h3>
-           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하여 제성한 술</h4>
        			</c:when>
        			<c:when test="${cata.category_id == 3}">
        				<h3 data-aos="fade-right" data-aos-duration="1000">증류주</h3>
-           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">1차로 발효된 양조주를 다시 증류시켜 알코올 도수를 높인 술</h4>
        			</c:when>
        			<c:when test="${cata.category_id == 4}">
        				<h3 data-aos="fade-right" data-aos-duration="1000">과실주</h3>
-           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">과실을 원료로 하여 발효시킨 술</h4>
        			</c:when>
        			<c:when test="${cata.category_id == 5}">
        				<h3 data-aos="fade-right" data-aos-duration="1000">기타주류</h3>
-           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">주세법상 분류된 증류주나 발효주 외의 술</h4>
        			</c:when>
        		</c:choose>
        	</c:forEach>>
@@ -41,10 +41,28 @@
                		<li>
                			<img src="${pageContext.request.contextPath}/images/product/${product.image}" alt="제품이미지" />
                			<div class="menuTxt">
-                           <h4>${product.category_id}</h4>
+                          <%--  <h4>${product.category_id}</h4> --%>
+                           <c:choose>
+	                           	<c:when test="${product.category_id == 1}">
+				       				<h4>탁주</h4>
+				       			</c:when>
+				       			<c:when test="${product.category_id == 2}">
+				       				<h4>약 · 청주</h4>
+				       			</c:when>
+				       			<c:when test="${product.category_id == 3}">
+				       				<h4>증류주</h4>
+				       			</c:when>
+				       			<c:when test="${product.category_id == 4}">
+				       				<h4>과실주</h4>
+				       			</c:when>
+				       			<c:when test="${product.category_id == 5}">
+				       				<h4>기타주류</h4>
+				       			</c:when>
+                           </c:choose>
+                           
                            <h5>${product.productName}</h5>
                            <p>${product.productPrice}</p>
-                           <button onClick="location.href='<%= request.getContextPath() %>insertWish.do'" class="wishBtn"><i class="far fa-heart"></i></button>
+                           <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do'" class="wishBtn"><i class="far fa-heart"></i></button>
                        </div>
                		</li>
                	</c:forEach>
