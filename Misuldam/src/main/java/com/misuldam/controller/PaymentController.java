@@ -2,6 +2,7 @@ package com.misuldam.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import com.misuldam.dao.PaymentDAO;
 import com.misuldam.dto.PaymentDTO;
@@ -49,8 +50,17 @@ public class PaymentController extends HttpServlet{
 				out.println("<script> alert('다시 시도해주시길 바랍니다.');location.href='./Menu.jsp'</script>");
 			}
 		}
-	
-	
+	//위시리스트 불러오기
+		else if(path.contains("selectWish")) {
+			int userId = Integer.parseInt(req.getParameter("userId"));
+			
+			PaymentDAO dao = new PaymentDAO();
+			List<WishListItemDTO> wishList = dao.selectWishList(userId);
+			
+			req.setAttribute("wishList", wishList);
+			req.getRequestDispatcher("./payment/Wish.jsp").forward(req, resp);
+			System.out.println("컨트롤러: 위시리스트 불러오기 성공");
+		}
 	
 	}
 	
