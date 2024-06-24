@@ -56,7 +56,7 @@ public class ProductDAO {
 				dto.setProductName(rs.getString("product_name"));
 				dto.setProductPrice(rs.getDouble("product_price"));
 				dto.setImage(rs.getString("image_url"));
-				
+				dto.setProductId(rs.getInt("productId"));
 				list.add(dto);
 			}
 		}
@@ -70,7 +70,40 @@ public class ProductDAO {
 		return list;
 	}
 	
-	//총 개수 출력
+	//상품상세정보 조회
+	public ArrayList<ProductDTO> pruductDetail(int productId){
+		getConnection();
+		ProductDTO dto = new ProductDTO();
+		
+		String sql = "select * from products where prodect_id = ?";
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, productId);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				dto = new ProductDTO();
+				
+				dto.setCategory_id(rs.getInt("category_id"));
+				dto.setProductName(rs.getString("product_name"));
+				dto.setProductPrice(rs.getDouble("product_price"));
+				dto.setImage(rs.getString("image_url"));
+				dto.setDescription(rs.getString("description"));
+				
+				list.add(dto);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			close();
+		}
+		
+		return list;
+	}
 	
 	
 	

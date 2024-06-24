@@ -16,7 +16,7 @@
 .menuList .topUtil .searchIco i{color:#9b9b9b;font-size:18px;}
 
 .menuList .menuCont{padding-top:20px;display:flex;flex-wrap:wrap;}
-.menuList .menuCont li{color:#f8f7f4;width:calc(100% / 4 - 45px);position:relative}
+.menuList .menuCont li{color:#f8f7f4;width:calc(100% / 4 - 45px);position:relative;cursor:pointer}
 .menuList .menuCont li:not(:nth-child(4n)){margin-right:60px}
 .menuList .menuCont li:nth-child(n+5){margin-top:60px}
 .menuList .menuCont li img{border-radius:5px;}
