@@ -1,5 +1,6 @@
 package com.misuldam.dto;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class UserDTO {
@@ -7,6 +8,7 @@ public class UserDTO {
     private int userId;
     private String userName;
     private String userPw;
+    private Date userBirth;
     private String userEmail;
     private String userPhone;
     private String name;
@@ -20,6 +22,12 @@ public class UserDTO {
 	}
 	public String getUserName() {
 		return userName;
+	}
+	public Date getUserBirth() {
+		return userBirth;
+	}
+	public void setUserBirth(Date userBirth) {
+		this.userBirth = userBirth;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
@@ -55,5 +63,9 @@ public class UserDTO {
 		this.createdAt = createdAt;
 	}
     
-    
+	@Override
+	public String toString() {
+		String str = "아이디"+getUserName()+"비밀번호"+getUserPw();
+		return str;
+}
 }

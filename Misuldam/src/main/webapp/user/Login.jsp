@@ -2,23 +2,27 @@
 <jsp:include page="/include/Header.jsp" />
 <link rel="stylesheet" href="../css/login.css">
 
+<%
+String id = (String) session.getAttribute("accountId");
+%>
+
 <div class="subCont">
 
 	<div class="login-wrap">
 	
 	   <section class="login-form">
 	        <h1>Misuldam</h1>
-	        <form action="">
+	        <form action="<%= request.getContextPath() %>/login.user" method="post">
 	            <div class="int-area">
-	                <input type="text" name="id" id="id" autocomplete="off" required>
+	                <input type="text" name="accountId" id="id" autocomplete="off" required>
 	                <label for="id">아이디</label>
 	            </div>
 	            <div class="int-area">
-	                <input type="password" name="pw" id="pw" autocomplete="off" required>
+	                <input type="password" name="accountPw" id="pw" autocomplete="off" required>
 	                <label for="pw">비밀번호</label>
 	            </div>
 	            <div class="btn-area">
-	                <button id="btn" type="submit">LOGIN</button>
+	                 <button id="btn" type="submit">LOGIN</button>
 	                
 	            </div>
 	        </form>
