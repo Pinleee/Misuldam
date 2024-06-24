@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,10 +41,20 @@
                     </nav>
                 </div>
                 <div class="utillWrap">
-                    <button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
-                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Wish.jsp'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
-                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
-                    <button onClick="location.href='<%= request.getContextPath() %>/user/Login.jsp'"><i class="fas fa-sign-in-alt"></i><span>로그인</span></button>
+                	<c:choose>
+						<c:when test="${empty sessionScope.accountId}">
+		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Wish.jsp'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Login.jsp'"><i class="fas fa-sign-in-alt"></i><span>로그인</span></button>
+						</c:when> 
+						<c:otherwise>
+							<button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Wish.jsp'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Logout.jsp'"><i class="fas fa-sign-in-alt"></i><span>로그아웃</span></button>
+						</c:otherwise>
+					</c:choose>                  
                 </div>
             </div>
         </header>
