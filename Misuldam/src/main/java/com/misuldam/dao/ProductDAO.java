@@ -22,7 +22,7 @@ public class ProductDAO {
 		try {
 			Context initCtx = new InitialContext();
 			Context ctx = (Context)initCtx.lookup("java:comp/env");
-			DataSource source = (DataSource)ctx.lookup("dbcp_myoracle");
+			DataSource source = (DataSource)ctx.lookup("DBPool");
 			
 			conn = source.getConnection();
 

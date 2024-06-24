@@ -5,8 +5,9 @@
 <%
 
 session.removeAttribute("accountId");
-response.sendRedirect("/Main.jsp");
+response.sendRedirect(request.getContextPath() + "/Main.jsp");
 %>
+
 
 
 <jsp:include page="/include/Footer.jsp" />
