@@ -9,7 +9,7 @@ public class ProductDTO {
     private String description;
     private double productPrice;
     private int stockQuantity;
-    private int productCategory;
+    private int category_id;
     private byte[] image;
     private Timestamp createdAt;
     
@@ -55,12 +55,13 @@ public class ProductDTO {
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
-	public int getProductCategory() {
-		return productCategory;
+	public int getCategory_id() {
+		return category_id;
 	}
-	public void setProductCategory(int productCategory) {
-		this.productCategory = productCategory;
+	public void setCategory_id(int category_id) {
+		this.category_id = category_id;
 	}
+	
     
     
 }

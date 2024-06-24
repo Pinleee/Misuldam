@@ -31,11 +31,11 @@
                 <div class="navWrap">
                     <nav id="nav">
                         <ul>
-                            <li><a href="">약 · 청주</a></li>
-                            <li><a href="">탁주</a></li>
-                            <li><a href="">증류주</a></li>
-                            <li><a href="">과실주</a></li>
-                            <li><a href="">기타주류</a></li>
+                            <li><a href="product.fo?categoryNum=1">약 · 청주</a></li>
+                            <li><a href="product.fo?categoryNum=2">탁주</a></li>
+                            <li><a href="product.fo?categoryNum=3">증류주</a></li>
+                            <li><a href="product.fo?categoryNum=4">과실주</a></li>
+                            <li><a href="product.fo?categoryNum=5">기타주류</a></li>
                         </ul>
                     </nav>
                 </div>
