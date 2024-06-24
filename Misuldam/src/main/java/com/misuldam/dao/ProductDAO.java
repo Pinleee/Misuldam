@@ -56,7 +56,7 @@ public class ProductDAO {
 				dto.setProductName(rs.getString("product_name"));
 				dto.setProductPrice(rs.getDouble("product_price"));
 				dto.setImage(rs.getString("image_url"));
-				dto.setProductId(rs.getInt("productId"));
+				dto.setProductId(rs.getInt("product_id"));
 				list.add(dto);
 			}
 		}
