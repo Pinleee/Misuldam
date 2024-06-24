@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <jsp:include page="/include/Header.jsp" />
 
 <div class="subCont">
@@ -13,7 +14,16 @@
                    <div class="searchBtn"><input type="text" placeholder="제품검색"><span class="searchIco"><i class="fas fa-search"></i></span></div>
                </div>
                <ul class="menuCont">
-                   <li>
+               	<c:forEach var="product" items="${productList}">
+               		<li>
+               			<div class="menuTxt">
+                           <h4>${product.category_id}</h4>
+                           <h5>${product.productName}</h5>
+                           <p>${product.productPrice}</p>
+                       </div>
+               		</li>
+               	</c:forEach>
+                   <!-- <li>
                        <img src="../images/prod01.jpg" alt="제품이미지" />
                        <div class="menuTxt">
                            <h4>탁주</h4>
@@ -60,7 +70,7 @@
                            <h5>영덕주조 도원결의 40도 360ml 복숭아 증류주</h5>
                            <p>9,000</p>
                        </div>
-                   </li>
+                   </li> -->
                </ul>
 
                <div class="pagination">

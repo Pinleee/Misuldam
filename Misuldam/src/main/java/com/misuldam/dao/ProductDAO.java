@@ -36,27 +36,28 @@ public class ProductDAO {
 	
 	
 	//카테고리별 상품조회
-	public ArrayList<ProductDTO> userWhere(int num){
+	public ArrayList<ProductDTO> pruductList(int categoryNum){
 		getConnection();
 		ProductDTO dto = new ProductDTO();
 		
-		String sql = "select * from projectdb.products where category_id = ?";
-		ArrayList<ProductDTO> arr2 = new ArrayList<ProductDTO>();
+		String sql = "select * from products where category_id = ?";
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
 		
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, num);
+			psmt.setInt(1, categoryNum);
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
 				dto = new ProductDTO();
 				
 				//이미지/이름/가격/카테고리 숫자
-				dto.setProductName(rs.getString("ProductName"));
-				dto.setProductPrice(rs.getDouble("ProductPrice"));
-				dto.setProductCategory(rs.getInt("ProductCategory"));
+				dto.setCategory_id(rs.getInt("category_id"));
+				dto.setProductName(rs.getString("product_name"));
+				dto.setProductPrice(rs.getDouble("product_price"));
 				
-				arr2.add(dto);
+				list.add(dto);
+				System.out.println(list);
 			}
 		}
 		catch (Exception e) {
@@ -66,7 +67,7 @@ public class ProductDAO {
 			close();
 		}
 		
-		return arr2;
+		return list;
 	}
 	
 	
