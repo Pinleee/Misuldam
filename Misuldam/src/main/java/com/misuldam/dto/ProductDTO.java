@@ -10,7 +10,7 @@ public class ProductDTO {
     private double productPrice;
     private int stockQuantity;
     private int category_id;
-    private byte[] image;
+    private String image;
     private Timestamp createdAt;
     
 	public int getProductId() {
@@ -43,10 +43,10 @@ public class ProductDTO {
 	public void setStockQuantity(int stockQuantity) {
 		this.stockQuantity = stockQuantity;
 	}
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 	public Timestamp getCreatedAt() {
@@ -61,6 +61,7 @@ public class ProductDTO {
 	public void setCategory_id(int category_id) {
 		this.category_id = category_id;
 	}
+	
 	
     
     

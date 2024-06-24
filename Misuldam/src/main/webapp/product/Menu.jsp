@@ -5,8 +5,31 @@
 <div class="subCont">
    <div class="catagWrap">
        <div class="catagCont">
-           <h3 data-aos="fade-right" data-aos-duration="1000">탁주</h3>
-           <h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+       <c:forEach var="cata" items="${productList}" begin="0" end="0">
+       		<c:choose>
+       			<c:when test="${cata.category_id == 1}">
+       				<h3 data-aos="fade-right" data-aos-duration="1000">탁주</h3>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+       			</c:when>
+       			<c:when test="${cata.category_id == 2}">
+       				<h3 data-aos="fade-right" data-aos-duration="1000">약 · 청주</h3>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+       			</c:when>
+       			<c:when test="${cata.category_id == 3}">
+       				<h3 data-aos="fade-right" data-aos-duration="1000">증류주</h3>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+       			</c:when>
+       			<c:when test="${cata.category_id == 4}">
+       				<h3 data-aos="fade-right" data-aos-duration="1000">과실주</h3>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+       			</c:when>
+       			<c:when test="${cata.category_id == 5}">
+       				<h3 data-aos="fade-right" data-aos-duration="1000">기타주류</h3>
+           			<h4 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">발효시킨 술덧을 여과하지 않고 제성한 술</h4>
+       			</c:when>
+       		</c:choose>
+       	</c:forEach>>
+           
 
            <div class="menuList">
                <div class="topUtil">
@@ -16,10 +39,12 @@
                <ul class="menuCont">
                	<c:forEach var="product" items="${productList}">
                		<li>
+               			<img src="${pageContext.request.contextPath}/images/product/${product.image}" alt="제품이미지" />
                			<div class="menuTxt">
                            <h4>${product.category_id}</h4>
                            <h5>${product.productName}</h5>
                            <p>${product.productPrice}</p>
+                           <button onClick="location.href='<%= request.getContextPath() %>insertWish.do'" class="wishBtn"><i class="far fa-heart"></i></button>
                        </div>
                		</li>
                	</c:forEach>
