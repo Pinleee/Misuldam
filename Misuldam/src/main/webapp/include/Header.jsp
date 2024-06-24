@@ -32,11 +32,11 @@
                 <div class="navWrap">
                     <nav id="nav">
                         <ul>
-                            <li><a href="product.fo?categoryNum=1">탁주</a></li>
-                            <li><a href="product.fo?categoryNum=2">약 · 청주</a></li>
-                            <li><a href="product.fo?categoryNum=3">증류주</a></li>
-                            <li><a href="product.fo?categoryNum=4">과실주</a></li>
-                            <li><a href="product.fo?categoryNum=5">기타주류</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=1">탁주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=2">약 · 청주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=3">증류주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=4">과실주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=5">기타주류</a></li>
                         </ul>
                     </nav>
                 </div>
