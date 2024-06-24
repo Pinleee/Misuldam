@@ -74,6 +74,7 @@ public class UserDAO {
                 dto = new UserDTO();
                 dto.setUserName(rs.getString("user_name"));
                 dto.setUserPw(rs.getString("user_pw"));
+                dto.setUserId(rs.getInt("userId"));
             }
 	      
 	     
