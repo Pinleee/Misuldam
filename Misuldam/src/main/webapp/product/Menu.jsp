@@ -62,7 +62,7 @@
                            
                            <h5>${product.productName}</h5>
                            <p>${product.productPrice}</p>
-                           <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do'" class="wishBtn"><i class="far fa-heart"></i></button>
+                           <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do?productId=${product.productId}&userId=${sessionScope.userId}'" class="wishBtn"><i class="far fa-heart"></i></button>
                        </div>
                		</li>
                	</c:forEach>

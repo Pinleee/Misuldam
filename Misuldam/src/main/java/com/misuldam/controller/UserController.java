@@ -80,7 +80,7 @@ public class UserController extends HttpServlet {
 		            // 로그인 성공 시
 		            session = req.getSession();
 		            session.setAttribute("accountId", dto.getUserName());
-		            
+		            session.setAttribute("userId", dto.getUserId());
 		            System.out.println("로그인 컨트롤러 실행");
 		            
 		            req.getRequestDispatcher("/Main.jsp").forward(req, resp);

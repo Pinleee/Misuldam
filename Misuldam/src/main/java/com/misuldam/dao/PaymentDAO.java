@@ -23,7 +23,7 @@ public class PaymentDAO {
 		try {
 			Context initCtx = new InitialContext();
 			Context ctx = (Context)initCtx.lookup("java:comp/env");	// lookup은 리턴타입이 Object 이므로 Context로 강제 형변환
-			DataSource source = (DataSource)ctx.lookup("dbcp_mysql");
+			DataSource source = (DataSource)ctx.lookup("DBPool");
 			con = source.getConnection();
 			System.out.println("DB 커넥션 풀 연결 성공");
 		} catch (Exception e) {
