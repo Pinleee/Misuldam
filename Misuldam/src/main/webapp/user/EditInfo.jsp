@@ -19,7 +19,7 @@
 
 			</ul>
 			
-			<h3>나의 계정설정</h3>
+			<h3>나의 계정설정</h3> <!-- 수정 -->
 			<ul __ngcontent="">
 				<li __ngcontent=""><a __ngcontent="" routerlink="/edit/info"
 					href="">회원정보수정</a></li>
