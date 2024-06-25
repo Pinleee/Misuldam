@@ -10,26 +10,16 @@
 			<h3>나의 쇼핑정보</h3>
 
 			<ul _ngcontent="">
-				<li _ngcontent=""><a __ngcontent=""
-					href="">주문배송조회</a></li>
-
-				<li __ngcontent=""><a __ngcontent=""
-					routerlink="/my-order/cancel-list"
-					href="">취소/교환/반품 내역</a></li>
-
+				<li _ngcontent=""><a href="">주문배송조회</a></li>
+				<li __ngcontent=""><a href="">취소/교환/반품 내역</a></li>
 			</ul>
 			
 			<h3>나의 계정설정</h3>
 			<ul __ngcontent="">
 				<li __ngcontent=""><a __ngcontent="" routerlink="/edit/info"
 					href="EditInfo.jsp">회원정보수정</a></li>
-
-				<li __ngcontent=""><a __ngcontent=""
-					href="">쿠폰</a></li>
-
+				<li __ngcontent=""><a href="">쿠폰</a></li>
 			</ul>
-
-
 			</ul>
 
 		</div>
