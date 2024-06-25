@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.misuldam.dto.ProductDTO;
 import com.misuldam.dto.WishListItemDTO;
 
 
@@ -53,16 +54,28 @@ public class PaymentDAO {
 	public List<WishListItemDTO> selectWishList(int userId){
 		List<WishListItemDTO> wishList = new ArrayList<>();
 		getConnection();
-		String query = "SELECT * FROM wishlistitems WHERE user_id = ?";
+		String query = "SELECT wishlistitems.user_id, wishlistitems.product_id, products.category_id,products.name AS product_name,"
+						+ "products.description AS product_description, products.price AS product_price, products.image_url "
+						+ "FROM wishlistitems JOIN products ON wishlistitems.product_id = products.product_id WHERE wishlistitems.user_id = ?";
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setInt(1, userId);
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				WishListItemDTO dto = new WishListItemDTO();
-				dto.setUserId(rs.getInt("user_id"));
-				dto.setProductId(rs.getInt("product_id"));
-				wishList.add(dto);
+				WishListItemDTO wishListItem = new WishListItemDTO();
+				wishListItem.setUserId(rs.getInt("user_id"));
+				wishListItem.setProductId(rs.getInt("product_id"));
+				
+				ProductDTO product = new ProductDTO();
+				product.setProductId(rs.getInt("product_id"));
+				product.setCategory_id(rs.getInt("category_id"));
+				product.setProductName(rs.getString("porduct_name"));
+				product.setDescription(rs.getString("product_description"));
+				product.setProductPrice(rs.getDouble("product_price"));
+				product.setImage(rs.getString("image_url"));
+				
+				wishListItem.setProduct(product);
+				wishList.add(wishListItem);
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

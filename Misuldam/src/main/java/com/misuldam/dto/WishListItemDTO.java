@@ -5,6 +5,7 @@ public class WishListItemDTO {
     private int wishlistItemId;
     private int userId;
     private int productId;
+    private ProductDTO product;
     
 	public int getWishlistItemId() {
 		return wishlistItemId;
@@ -23,6 +24,12 @@ public class WishListItemDTO {
 	}
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+	public ProductDTO getProduct() {
+		return product;
+	}
+	public void setProduct(ProductDTO product) {
+		this.product = product;
 	}
     
 }

@@ -45,9 +45,13 @@ public class PaymentController extends HttpServlet{
 			PaymentDAO dao = new PaymentDAO();
 			int result = dao.insertWishList(dto);
 			if(result>0) { // 등록 성공
-				out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');location.href='./Menu.jsp'</script>");
+				out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');");
+				out.println("history.go(-1); </script>"); 
+				//out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');history.go(-1)'</script>");
 			}else { // 등록 오류
-				out.println("<script> alert('다시 시도해주시길 바랍니다.');location.href='./Menu.jsp'</script>");
+				out.println("<script> alert('다시 시도해주시길 바랍니다.');");
+				out.println("history.go(-1); </script>");
+				//out.println("<script> alert('다시 시도해주시길 바랍니다.');history.go(-1)'</script>");
 			}
 		}
 	//위시리스트 불러오기
