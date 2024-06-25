@@ -75,6 +75,8 @@ public class UserDAO {
                 dto.setUserName(rs.getString("user_name"));
                 dto.setUserPw(rs.getString("user_pw"));
                 dto.setUserId(rs.getInt("user_id"));
+                dto.setName(rs.getString("name"));
+                dto.setUserEmail(rs.getString("user_email"));
             }
 	      
 	     

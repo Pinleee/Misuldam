@@ -1,14 +1,17 @@
 
-.mypage{
-	height: 100vh;
+.cataWrap{
+	margin: 0 auto;
+    min-height: 100vh;
+    background: #252423;
 }
 .my_shop{
-	padding :146px 50px;
+	padding :100px 50px;
 	width : 300px;
 	color : #fafcf3;
 }
 .my_shop h3{
 	font-size : 30px;
+	font-weight : bold;
 	margin-bottom:20px;
 	margin-top : 20px;
 }
@@ -23,6 +26,12 @@ li{
    font-size:20px;
    font-weight: 200;
    color : #fff
+}
+h2{
+	font-size : 25px;
+    margin-bottom: 50px;
+    letter-spacing : 1px;
+
 }
 .login-wrap {
 	width: 100%;
@@ -101,7 +110,21 @@ li{
 	font-size: 20px;
 	cursor: pointer;
 }
+button.btn-edit{
+	text-align: center;
+    width: 8%;
+    background: #f8f7f4;
+   
+}
+button.btn-veri{
+	background : #f8f7f4;
+	height :23px;
+	width : 12%;
 
+}
+input#new_password {
+    margin-left: 34.5px;
+}
 .caption {
 	margin-top: 20px;
 	text-align: center;
@@ -122,4 +145,52 @@ li{
 	content: '|';
 	color: white; /* 구분자 색상도 흰색으로 설정 */
 	padding-left: 10px;
+}
+
+.cataCont{width:100%;max-width:1500px;margin:0 auto;display:flex}
+/* .my_shop, .info_modify{border:1px solid red} */
+.my_shop{width:30%}
+.info_modify{
+	width:70%;
+	color: #fafcf3;
+	padding: 90px 50px;
+	}
+.ingo_modify h2{
+	font-size : 25px;
+    margin-bottom: 50px;
+    letter-spacing : 1px;
+}
+label{
+	    margin-right: 10px;
+	    font-size: 18px;
+}
+.info{
+	    margin: 20px;
+}
+.my_id{
+	margin: 20px 0;
+}
+i{
+	display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fafcf3;
+    margin-right: 6px;
+}
+.my_pw,.new_pw,.check_pw,.my_name,.my_cell,.my_email{
+	    margin-bottom: 20px;
+}
+select#phone1{
+	width:50px;
+}
+input#mobile2{
+	width : 70px;
+}
+input#mobile3{
+	margin-right: 10px;
+	width:70px;
+}
+input#birth_year,input#birth_month,input#birth_day{
+	width:60px;
 }
