@@ -16,7 +16,7 @@
 			<c:forEach var="wish" items="${wishList}">
 	                   <li>
 	                       <img src="${pageContext.request.contextPath}/images/product/${wish.product.image}" alt="제품이미지" />
-	                       <button class="wishBtn" onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-heart wish-icon"></i></button>
+	                       <button class="wishBtn" onClick="location.href='<%= request.getContextPath() %>/deleteWish.do?userId=${sessionScope.userId}&productId=${wish.product.productId }'"><i class="fas fa-heart wish-icon"></i></button>
 	                       <div class="menuTxt">
 	                       <c:choose>
 	                           	<c:when test="${wish.product.category_id == 1}">
