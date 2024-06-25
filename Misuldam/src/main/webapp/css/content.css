@@ -69,3 +69,15 @@
 
 .wishBtn{position:absolute;bottom:23%;right:6%;padding:3px;cursor:pointer;z-index:9}
 
+/*******리뷰작성***********/
+.reviewRegister{padding:20px 0}
+.reviewRegister h3{line-height:4;font-size:25px;font-weight:600;color:#aa844d}
+.reviewRegister input{display:inline-block;width:20%;padding:10px;margin-bottom:20px;background:#f8f7f4;border:none;font-size:17px}
+.reviewRegister input:placeholder{color:#252423}
+.reviewRegister input:focus {outline:none;}
+.reviewRegister span{color:#f8f7f4;padding-right:20px;display:inline-block;font-size:17px;font-weight:600}
+.reviewRegister .reviewRegisterTxt{display:block;width:100%;padding:15px 20px;background:#f8f7f4;border:none;height:200px;font-size:17px;resize:none}
+
+.RegisterBtn{width:100%;text-align:end;margin-top:30px;}
+.reviewRegisterBtn{background:#aa844d;color:#f8f7f4;padding:13px 35px;cursor:pointer}
+.reviewRegisterBtn:hover{color:#f8f7f4}

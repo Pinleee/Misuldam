@@ -71,11 +71,11 @@ public class ProductDAO {
 	}
 	
 	//상품상세정보 조회
-	public ArrayList<ProductDTO> pruductDetail(int productId){
+	public ArrayList<ProductDTO> productDetail(int productId){
 		getConnection();
 		ProductDTO dto = new ProductDTO();
 		
-		String sql = "select * from products where prodect_id = ?";
+		String sql = "select * from products where product_id = ?";
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
 		
 		try {
@@ -90,7 +90,7 @@ public class ProductDAO {
 				dto.setProductName(rs.getString("product_name"));
 				dto.setProductPrice(rs.getDouble("product_price"));
 				dto.setImage(rs.getString("image_url"));
-				dto.setDescription(rs.getString("description"));
+				dto.setDescription(rs.getString("product_description"));
 				
 				list.add(dto);
 			}

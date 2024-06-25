@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/include/Header.jsp" />
 
 <div class="subCont">
@@ -16,7 +17,7 @@
                    <div class="reviewLink">
                        <a href="">64개 리뷰보기</a>
                    </div>
-                   <p class="price">${detail.productPrice}<span>원</span></p>
+                   <p class="price"><fmt:formatNumber value="${detail.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/><span>원</span></p>
                    <div class="delivery">
                        <h5>배송비</h5>
                        <div class="rDeli">
@@ -89,6 +90,15 @@
                        </div>
                    </li>
                </ul>
+               
+				<div class="reviewRegister">
+					<h3>리뷰작성하기</h3>
+					<form>
+						<span>ID</span><input type="text" class="reviewRegisterId" readonly value="${sessionScope.accountId}" placeholder="${sessionScope.accountId}"/>
+						<textarea class="reviewRegisterTxt" placeholder="로그인 후 사용해주세요."></textarea>
+						<div class="RegisterBtn"><button class="reviewRegisterBtn" type="submit">리뷰작성하기</button></div>
+					</form>
+				</div>               
 
                <div class="pagination">
                    <ul>
