@@ -3,9 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/include/Header.jsp" />
 
-<%-- <%
-	int productNum = Integer.parseInt(session.getAttribute("productNum"));
-%> --%>
 
 <div class="subCont">
    <div class="detailWrap">
@@ -97,12 +94,12 @@
                
 				<div class="reviewRegister">
 					<h3>리뷰작성하기</h3>
-					<form action="<%= request.getContextPath() %>/review.review" method="post">
-						<span>ID</span><input type="text" class="reviewRegisterId" readonly name="userId" placeholder="${sessionScope.accountId}"/>
+					<form action="<%= request.getContextPath() %>/review.review?productNum=${sessionScope.productNum}&userId=${sessionScope.userId}" method="post">
+						<span>ID</span><input type="text" class="reviewRegisterId" readonly name="userId"  placeholder="${sessionScope.accountId}"/>
 						<textarea class="reviewRegisterTxt" name="comment" placeholder="로그인 후 사용해주세요."></textarea>
 						
-						<input type="hidden" value="${sessionScope.userId}" />
-						<input type="hidden" value="${productNum}" name="productNum" />
+						<input type="hidden"  />
+						<input type="hidden"  name="productNum" />
 						
 						<div class="RegisterBtn"><button class="reviewRegisterBtn" type="submit">리뷰작성하기</button></div>
 					</form>

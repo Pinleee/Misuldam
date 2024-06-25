@@ -25,23 +25,23 @@ public class ReviewController extends HttpServlet{
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html; charset=utf-8");
         
-		/* HttpSession session = null; */
+		
         
         if(path.contains("review")) {
         	
-        	int productId = Integer.parseInt(req.getParameter("productId"));
+        	int productNum = Integer.parseInt(req.getParameter("productNum"));
         	int userId = Integer.parseInt(req.getParameter("userId"));
         	String comment = req.getParameter("comment");
         	
         	ReviewDTO review = new ReviewDTO();
         	
-        	review.setProductId(productId);
+        	review.setProductId(productNum);
         	review.setUserId(userId);
         	review.setComment(comment);
         	
         	ReviewDAO dao = new ReviewDAO();
         	dao.reviewRegister(review);
-        	
+        	System.out.println("컨트롤러: 리뷰 작성 성공");
         	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
         	
         }

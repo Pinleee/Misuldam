@@ -14,6 +14,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("*.fo")
 public class ProductController extends HttpServlet{
@@ -25,6 +26,7 @@ public class ProductController extends HttpServlet{
 	    PrintWriter out = resp.getWriter();
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html; charset=utf-8");
+        HttpSession session = null;
         
         if(path.contains("product")) {
         	String userIdParam = req.getParameter("userId");
@@ -51,7 +53,8 @@ public class ProductController extends HttpServlet{
         	ProductDAO dao = new ProductDAO();
         	List<ProductDTO> list2 = dao.productDetail(productNum);
         	
-        	req.setAttribute("productNum", productNum);
+        	session = req.getSession();
+        	session.setAttribute("productNum", productNum);
         	req.setAttribute("productDetail", list2);
         	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
         }
