@@ -2,6 +2,7 @@
 <jsp:include page="/include/Header.jsp" />
 <link href="${pageContext.request.contextPath}/css/Payment.css" rel="stylesheet" />
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="subCont">
    <div class="catagWrap">
        <div class="catagCont">
@@ -35,7 +36,7 @@
 				       			</c:when>
                            </c:choose>
 	                           <h5>${wish.product.productName}</h5>
-	                           <p>${wish.product.productPrice}</p>
+	                           <p><fmt:formatNumber value="${wish.product.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/>원</p>
 	                       </div>
 	                   </li>
 			</c:forEach>	

@@ -35,13 +35,26 @@ public class PaymentDAO {
 	// 위시리스트 저장
 	public int insertWishList(WishListItemDTO dto) {
 		getConnection();
-		String query = "INSERT INTO wishlistitems(user_id,product_id) VALUES(?,?)";
+		String checkQuery = "SELECT COUNT(*) FROM wishlistitems WHERE user_id = ? AND product_id = ?";
+		String insertQuery = "INSERT INTO wishlistitems(user_id,product_id) VALUES(?,?)";
 		int result = 0;
+		
 		try {
-			psmt = con.prepareStatement(query);
+			psmt = con.prepareStatement(checkQuery);
 			psmt.setInt(1, dto.getUserId());
 			psmt.setInt(2, dto.getProductId());
-			result = psmt.executeUpdate();
+			rs = psmt.executeQuery();
+			
+			if(rs.next() && rs.getInt(1)==0) {
+				psmt = con.prepareStatement(insertQuery);
+				psmt.setInt(1, dto.getUserId());
+				psmt.setInt(2, dto.getProductId());
+				result = psmt.executeUpdate();
+			}else {
+				System.out.println("위시리스트 중복");
+				result = -1;
+			}
+			
 		} catch (SQLException e) {
 			e.getStackTrace();
 		} finally {

@@ -49,7 +49,11 @@ public class PaymentController extends HttpServlet{
 				out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');");
 				out.println("history.go(-1); </script>"); 
 				//out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');history.go(-1)'</script>");
-			}else { // 등록 오류
+			} else if(result == -1){
+				out.println("<script> alert('해당 제품은 이미 등록된 제품입니다..');");
+				out.println("history.go(-1); </script>");
+			}
+			else { // 등록 오류
 				out.println("<script> alert('다시 시도해주시길 바랍니다.');");
 				out.println("history.go(-1); </script>");
 				//out.println("<script> alert('다시 시도해주시길 바랍니다.');history.go(-1)'</script>");
