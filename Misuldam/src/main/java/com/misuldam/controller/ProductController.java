@@ -32,6 +32,14 @@ public class ProductController extends HttpServlet{
         	req.setAttribute("productList", list);
         	req.getRequestDispatcher("./product/Menu.jsp").forward(req, resp);
         }
+        else if(path.contains("Detail")) {
+        	int productNum = Integer.parseInt(req.getParameter("productNum"));
+        	ProductDAO dao = new ProductDAO();
+        	List<ProductDTO> list2 = dao.productDetail(productNum);
+        	
+        	req.setAttribute("productDetail", list2);
+        	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
+        }
 		
         
 		
