@@ -22,7 +22,7 @@
 			<h3>나의 계정설정</h3>
 			<ul __ngcontent="">
 				<li __ngcontent=""><a __ngcontent="" routerlink="/edit/info"
-					href="EditInfo.jsp">회원정보수정</a></li>
+					href="">회원정보수정</a></li>
 
 				<li __ngcontent=""><a __ngcontent=""
 					href="">쿠폰</a></li>
