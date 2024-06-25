@@ -60,7 +60,7 @@ public class PaymentDAO {
 		} finally {
 			close();
 		}
-		System.out.println("insert dao 성공");
+		System.out.println("DAO:insert dao 성공");
 		return result;
 	}
 	// 위시리스트 불러오기
@@ -117,8 +117,29 @@ public class PaymentDAO {
 		System.out.println("delete dao 성공");
 		return result;
 	}
-	
-	
+	// 등록된 상품 확인
+	public List<WishListItemDTO> searchList(int userId){
+		List<WishListItemDTO> searchList = new ArrayList<>();
+		getConnection();
+		String query = "SELECT * FROM wishlistitems WHERE user_id = ?";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setInt(1, userId);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				WishListItemDTO wishList = new WishListItemDTO();
+				wishList.setProductId(rs.getInt("product_id"));
+				
+				searchList.add(wishList);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		System.out.println("DAO: 위시리스트 검색 성공");
+		return searchList;
+	}
 	
 	
 	
