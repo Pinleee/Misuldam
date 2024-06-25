@@ -38,11 +38,11 @@
                 <div class="navWrap">
                     <nav id="nav">
                         <ul>
-                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=1">탁주</a></li>
-                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=2">약 · 청주</a></li>
-                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=3">증류주</a></li>
-                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=4">과실주</a></li>
-                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=5">기타주류</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=1&userId=${sessionScope.userId}">탁주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=2&userId=${sessionScope.userId}">약 · 청주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=3&userId=${sessionScope.userId}">증류주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=4&userId=${sessionScope.userId}">과실주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=5&userId=${sessionScope.userId}">기타주류</a></li>
                         </ul>
                     </nav>
                 </div>

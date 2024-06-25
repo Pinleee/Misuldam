@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import com.misuldam.dao.PaymentDAO;
 import com.misuldam.dao.ProductDAO;
 import com.misuldam.dto.ProductDTO;
+import com.misuldam.dto.WishListItemDTO;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,18 +27,27 @@ public class ProductController extends HttpServlet{
         resp.setContentType("text/html; charset=utf-8");
         
         if(path.contains("product")) {
+        	int userId = Integer.parseInt(req.getParameter("userId"));
         	int categoryNum = Integer.parseInt(req.getParameter("categoryNum"));
+        	
         	ProductDAO dao = new ProductDAO();
         	List<ProductDTO> list = dao.pruductList(categoryNum);
-        	
         	req.setAttribute("productList", list);
+        	
+        	if(userId > 0) {
+            	PaymentDAO dao2 = new PaymentDAO();
+            	List<WishListItemDTO> searchLists = dao2.searchList(userId);
+            	req.setAttribute("searchLists", searchLists);
+            	System.out.println("컨트롤러 :위시리스트 불러오기");
+        	}
         	req.getRequestDispatcher("./product/Menu.jsp").forward(req, resp);
-        }
+    	}
         else if(path.contains("Detail")) {
         	int productNum = Integer.parseInt(req.getParameter("productNum"));
         	ProductDAO dao = new ProductDAO();
         	List<ProductDTO> list2 = dao.productDetail(productNum);
-
+        	
+        	req.setAttribute("productNum", productNum);
         	req.setAttribute("productDetail", list2);
         	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
         }

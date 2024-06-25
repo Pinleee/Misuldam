@@ -119,7 +119,7 @@ public class PaymentDAO {
 	}
 	// 등록된 상품 확인
 	public List<WishListItemDTO> searchList(int userId){
-		List<WishListItemDTO> searchList = new ArrayList<>();
+		List<WishListItemDTO> searchLists = new ArrayList<>();
 		getConnection();
 		String query = "SELECT * FROM wishlistitems WHERE user_id = ?";
 		try {
@@ -130,7 +130,7 @@ public class PaymentDAO {
 				WishListItemDTO wishList = new WishListItemDTO();
 				wishList.setProductId(rs.getInt("product_id"));
 				
-				searchList.add(wishList);
+				searchLists.add(wishList);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -138,7 +138,7 @@ public class PaymentDAO {
 			close();
 		}
 		System.out.println("DAO: 위시리스트 검색 성공");
-		return searchList;
+		return searchLists;
 	}
 	
 	

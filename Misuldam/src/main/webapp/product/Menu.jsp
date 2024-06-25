@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/include/Header.jsp" />
 
@@ -65,7 +66,20 @@
                            <h5>${product.productName}</h5>
                            <p><fmt:formatNumber value="${product.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/>원</p>
                        </div></a>
-                           <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do?productId=${product.productId}&userId=${sessionScope.userId}'" class="wishBtn"><i class="far fa-heart"></i></button>
+                           <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do?productId=${product.productId}&userId=${sessionScope.userId}'" class="wishBtn">
+                          <c:set var="isInWishList" value="false" />
+					            <c:forEach var="item" items="${searchLists}">
+					                <c:if test="${item.productId == product.productId}">
+					                    <c:set var="isInWishList" value="true" />
+					                </c:if>
+					            </c:forEach>
+						            <c:if test="${isInWishList}">
+						                <i class="fas fa-heart wish-icon"></i>
+						            </c:if>
+						            <c:if test="${!isInWishList}">
+						                <i class="far fa-heart"></i>
+						            </c:if>
+                           </button>
                		</li>
                		
                	</c:forEach>
