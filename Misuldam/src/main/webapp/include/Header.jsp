@@ -37,6 +37,17 @@
                 <h1 class="logo">미술담</h1>
                 <div class="navWrap">
                     <nav id="nav">
+                    <c:choose>
+                    	<c:when test="${empty sessionScope.accountId}">
+                        <ul>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=1">탁주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=2">약 · 청주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=3">증류주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=4">과실주</a></li>
+                            <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=5">기타주류</a></li>
+                        </ul>
+                        </c:when>
+                    	<c:otherwise>
                         <ul>
                             <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=1&userId=${sessionScope.userId}">탁주</a></li>
                             <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=2&userId=${sessionScope.userId}">약 · 청주</a></li>
@@ -44,6 +55,8 @@
                             <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=4&userId=${sessionScope.userId}">과실주</a></li>
                             <li><a href="<%= request.getContextPath() %>/product.fo?categoryNum=5&userId=${sessionScope.userId}">기타주류</a></li>
                         </ul>
+                        </c:otherwise>
+                    </c:choose>
                     </nav>
                 </div>
                 <div class="utillWrap">

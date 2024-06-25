@@ -27,7 +27,11 @@ public class ProductController extends HttpServlet{
         resp.setContentType("text/html; charset=utf-8");
         
         if(path.contains("product")) {
-        	int userId = Integer.parseInt(req.getParameter("userId"));
+        	String userIdParam = req.getParameter("userId");
+        	int userId = 0;
+        	if(userIdParam != null && !userIdParam.isEmpty()) {
+        		userId = Integer.parseInt(userIdParam);
+        	}
         	int categoryNum = Integer.parseInt(req.getParameter("categoryNum"));
         	
         	ProductDAO dao = new ProductDAO();
@@ -35,10 +39,10 @@ public class ProductController extends HttpServlet{
         	req.setAttribute("productList", list);
         	
         	if(userId > 0) {
-            	PaymentDAO dao2 = new PaymentDAO();
-            	List<WishListItemDTO> searchLists = dao2.searchList(userId);
-            	req.setAttribute("searchLists", searchLists);
-            	System.out.println("컨트롤러 :위시리스트 불러오기");
+        		PaymentDAO dao2 = new PaymentDAO();
+        		List<WishListItemDTO> searchLists = dao2.searchList(userId);
+        		req.setAttribute("searchLists", searchLists);
+        		System.out.println("컨트롤러 :위시리스트 불러오기");
         	}
         	req.getRequestDispatcher("./product/Menu.jsp").forward(req, resp);
     	}
