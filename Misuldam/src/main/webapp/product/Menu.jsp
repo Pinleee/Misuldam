@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/include/Header.jsp" />
 
 <div class="subCont">
@@ -62,7 +63,7 @@
                            </c:choose>
                            
                            <h5>${product.productName}</h5>
-                           <p>${product.productPrice}</p>
+                           <p><fmt:formatNumber value="${product.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/>원</p>
                            <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do?productId=${product.productId}&userId=${sessionScope.userId}'" class="wishBtn"><i class="far fa-heart"></i></button>
                        </div>
                		</li>
