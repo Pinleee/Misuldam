@@ -1,19 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <jsp:include page="/include/Header.jsp" />
 
 <div class="subCont">
    <div class="detailWrap">
        <div class="detailCont">
+   		<c:forEach var="detail" items="${productDetail}">
            <div class="detailProd">
                <div class="imgWrap">
-                   <img src="../images/detail01.jpg" alt="제품이미지" />
+                   <img src="${pageContext.request.contextPath}/images/product/${detail.image}" alt="제품이미지" />
                </div>
                <div class="detailTxt">
-                   <h3>제주샘주 니모메11도 375ml 제주 감귤 전통주</h3>
+               
+                   <h3>${detail.productName}</h3>
                    <div class="reviewLink">
                        <a href="">64개 리뷰보기</a>
                    </div>
-                   <p class="price">9,000<span>원</span></p>
+                   <p class="price">${detail.productPrice}<span>원</span></p>
                    <div class="delivery">
                        <h5>배송비</h5>
                        <div class="rDeli">
@@ -36,14 +39,15 @@
                    </div>
                </div>
            </div>
-
-           <div class="prodExplan">
-               <h4>상품정보</h4>
-               <p>국가는 농지에 관하여 경자유전의 원칙이 달성될 수 있도록 노력하여야 하며, 농지의 소작제도는 금지된다. 정당은 그 목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다.
-                   재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
-                   모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.
-                   대통령은 조국의 평화적 통일을 위한 성실한 의무를 진다. 대통령으로 선거될 수 있는 자는 국회의원의 피선거권이 있고 선거일 현재 40세에 달하여야 한다.</p>
-           </div>
+			</c:forEach>
+			
+           <c:forEach var="detail2" items="${productDetail}">
+		    <div class="prodExplan">
+		        <h4>상품정보</h4>
+		        <!-- 객체의 필드에 접근합니다. -->
+		        <p><c:out value="${detail2.description}" /></p>
+		    </div>
+		</c:forEach>
 
            <div class="reviewWrap">
                <div class="reviewTop"><h3>리뷰</h3></div>
@@ -100,7 +104,10 @@
                     </ul>
                 </div>
             </div>
+            
+        
         </div>
+        
     </div>
     
 

@@ -38,6 +38,7 @@
                </div>
                <ul class="menuCont">
                	<c:forEach var="product" items="${productList}">
+               		<a href="<%= request.getContextPath() %>/Detail.fo?productNum=${product.productId}" class="prodList">
                		<li>
                			<img src="${pageContext.request.contextPath}/images/product/${product.image}" alt="제품이미지" />
                			<div class="menuTxt">
@@ -65,6 +66,7 @@
                            <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do?productId=${product.productId}&userId=${sessionScope.userId}'" class="wishBtn"><i class="far fa-heart"></i></button>
                        </div>
                		</li>
+               		</a>
                	</c:forEach>
                    <!-- <li>
                        <img src="../images/prod01.jpg" alt="제품이미지" />
