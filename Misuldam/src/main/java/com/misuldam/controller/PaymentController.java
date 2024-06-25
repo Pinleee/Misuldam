@@ -38,6 +38,7 @@ public class PaymentController extends HttpServlet{
 			int userId = Integer.parseInt(req.getParameter("userId"));
 			int productId = Integer.parseInt(req.getParameter("productId"));
 			
+			
 			WishListItemDTO dto = new WishListItemDTO();
 			dto.setUserId(userId);
 			dto.setProductId(productId);
@@ -52,8 +53,8 @@ public class PaymentController extends HttpServlet{
 				out.println("<script> alert('다시 시도해주시길 바랍니다.');");
 				out.println("history.go(-1); </script>");
 				//out.println("<script> alert('다시 시도해주시길 바랍니다.');history.go(-1)'</script>");
+				}
 			}
-		}
 	//위시리스트 불러오기
 		else if(path.contains("selectWish")) {
 			int userId = Integer.parseInt(req.getParameter("userId"));
@@ -64,8 +65,12 @@ public class PaymentController extends HttpServlet{
 			req.setAttribute("wishList", wishList);
 			req.getRequestDispatcher("./payment/Wish.jsp").forward(req, resp);
 			System.out.println("컨트롤러: 위시리스트 불러오기 성공");
+			
 		}
 	
+		
+		
+		
+		
 	}
-	
 }
