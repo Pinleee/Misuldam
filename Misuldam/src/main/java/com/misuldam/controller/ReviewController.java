@@ -25,18 +25,16 @@ public class ReviewController extends HttpServlet{
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html; charset=utf-8");
         
-        HttpSession session = null;
+		/* HttpSession session = null; */
         
         if(path.contains("review")) {
         	
-        	int reviewId = Integer.parseInt(req.getParameter("reviewId"));
         	int productId = Integer.parseInt(req.getParameter("productId"));
         	int userId = Integer.parseInt(req.getParameter("userId"));
         	String comment = req.getParameter("comment");
         	
         	ReviewDTO review = new ReviewDTO();
         	
-        	review.setReviewId(reviewId);
         	review.setProductId(productId);
         	review.setUserId(userId);
         	review.setComment(comment);
