@@ -39,9 +39,9 @@
                </div>
                <ul class="menuCont">
                	<c:forEach var="product" items="${productList}">
-               		<a href="<%= request.getContextPath() %>/Detail.fo?productNum=${product.productId}" class="prodList">
                		<li>
                			<img src="${pageContext.request.contextPath}/images/product/${product.image}" alt="제품이미지" />
+               			<a href="<%= request.getContextPath() %>/Detail.fo?productNum=${product.productId}" class="prodList">
                			<div class="menuTxt">
                           <%--  <h4>${product.category_id}</h4> --%>
                            <c:choose>
@@ -64,10 +64,10 @@
                            
                            <h5>${product.productName}</h5>
                            <p><fmt:formatNumber value="${product.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/>원</p>
+                       </div></a>
                            <button onClick="location.href='<%= request.getContextPath() %>/insertWish.do?productId=${product.productId}&userId=${sessionScope.userId}'" class="wishBtn"><i class="far fa-heart"></i></button>
-                       </div>
                		</li>
-               		</a>
+               		
                	</c:forEach>
                    <!-- <li>
                        <img src="../images/prod01.jpg" alt="제품이미지" />

@@ -12,7 +12,14 @@ public class ProductDTO {
     private int category_id;
     private String image;
     private Timestamp createdAt;
+    private boolean inWishlist;
     
+	public boolean isInWishlist() {
+		return inWishlist;
+	}
+	public void setInWishlist(boolean inWishlist) {
+		this.inWishlist = inWishlist;
+	}
 	public int getProductId() {
 		return productId;
 	}
