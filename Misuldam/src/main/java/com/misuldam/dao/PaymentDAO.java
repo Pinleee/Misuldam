@@ -54,8 +54,8 @@ public class PaymentDAO {
 	public List<WishListItemDTO> selectWishList(int userId){
 		List<WishListItemDTO> wishList = new ArrayList<>();
 		getConnection();
-		String query = "SELECT wishlistitems.user_id, wishlistitems.product_id, products.category_id,products.name AS product_name,"
-						+ "products.description AS product_description, products.price AS product_price, products.image_url "
+		String query = "SELECT wishlistitems.user_id, wishlistitems.product_id, products.category_id,products.product_name AS product_name,"
+						+ "products.product_description AS product_description, products.product_price AS product_price, products.image_url "
 						+ "FROM wishlistitems JOIN products ON wishlistitems.product_id = products.product_id WHERE wishlistitems.user_id = ?";
 		try {
 			psmt = con.prepareStatement(query);
@@ -69,7 +69,7 @@ public class PaymentDAO {
 				ProductDTO product = new ProductDTO();
 				product.setProductId(rs.getInt("product_id"));
 				product.setCategory_id(rs.getInt("category_id"));
-				product.setProductName(rs.getString("porduct_name"));
+				product.setProductName(rs.getString("product_name"));
 				product.setDescription(rs.getString("product_description"));
 				product.setProductPrice(rs.getDouble("product_price"));
 				product.setImage(rs.getString("image_url"));

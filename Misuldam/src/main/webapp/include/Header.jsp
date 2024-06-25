@@ -21,6 +21,12 @@
     <!--slick-slider-->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+    		function LoginGo(){
+    			alert("로그인이 필요한 서비스입니다.");
+    			window.location.href = "./user/Login.jsp"
+    		}
+    </script>
 </head>
 <body>
 
@@ -43,15 +49,15 @@
                 <div class="utillWrap">
                 	<c:choose>
 						<c:when test="${empty sessionScope.accountId}">
-		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
-		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Wish.jsp'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
-		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
+		                    <button onClick="LoginGo()"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
+		                    <button onClick="LoginGo()"><i class="fas fa-heart"></i><span>위시리스트</span></button>
+		                    <button onClick="LoginGo()"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
 		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Login.jsp'"><i class="fas fa-sign-in-alt"></i><span>로그인</span></button>
 						</c:when> 
 						<c:otherwise>
 							<button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
-		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Wish.jsp'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
-		                    <button onClick="location.href='<%= request.getContextPath() %>/payment/Cart.jsp'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/selectWish.do?userId=${sessionScope.userId}'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/cartList.do?userId=${sessionScope.userId}'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
 		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Logout.jsp'"><i class="fas fa-sign-in-alt"></i><span>로그아웃</span></button>
 						</c:otherwise>
 					</c:choose>                  
