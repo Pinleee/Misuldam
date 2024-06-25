@@ -81,6 +81,8 @@ public class UserController extends HttpServlet {
 		            session = req.getSession();
 		            session.setAttribute("accountId", dto.getUserName());
 		            session.setAttribute("userId", dto.getUserId());
+		            session.setAttribute("userName", dto.getName());
+		            session.setAttribute("userEmail",dto.getUserEmail());
 		            System.out.println("로그인 컨트롤러 실행");
 		            
 		            req.getRequestDispatcher("/Main.jsp").forward(req, resp);
