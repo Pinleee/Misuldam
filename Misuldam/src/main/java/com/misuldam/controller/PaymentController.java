@@ -97,7 +97,7 @@ public class PaymentController extends HttpServlet{
 		else if(path.contains("insertCart")) {
 			String userIdParam = req.getParameter("userId");
 			int userId = 0;
-			int productQty = Integer.parseInt("productQty"); 
+			int productQty = Integer.parseInt(req.getParameter("productQty")); 
 			int productId = Integer.parseInt(req.getParameter("productId"));
 			if(userIdParam != null && !userIdParam.isEmpty()) {
 				userId = Integer.parseInt(userIdParam);

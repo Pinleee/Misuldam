@@ -165,7 +165,7 @@ public class PaymentDAO {
 				result = -1;
 			}
 		} catch (SQLException e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		} finally {
 			close();
 		}
@@ -176,9 +176,12 @@ public class PaymentDAO {
 	public List<CartItemDTO> selectCartList(int userId){
 		List<CartItemDTO> cartList = new ArrayList<>();
 		getConnection();
-		String query = "cartitems.user_id, cartitems.product_id, cartitems.quantity,products.category_id,products.product_name AS product_name,"
-						+ "products.product_description AS product_description, products.product_price AS product_price, products.image_url"
-						+ "FROM cartitems JOIN products ON cartitems.product_id = products.product_id WHERE cartitems.user_id = ?";
+		String query = "SELECT cartitems.user_id, cartitems.product_id, cartitems.quantity, products.category_id, "
+						+ "products.product_name AS product_name, "
+						+ "products.product_description AS product_description, "
+						+ "products.product_price AS product_price, products.image_url "
+						+ "FROM cartitems JOIN products ON cartitems.product_id = products.product_id "
+						+ "WHERE cartitems.user_id = ?";
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setInt(1, userId);

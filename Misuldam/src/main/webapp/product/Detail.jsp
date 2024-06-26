@@ -36,7 +36,7 @@
                        <input type='button' onclick='count("plus")' value='+'/>
                    </div>
                    <div class="detailBtn">
-                       <button class="shoppingBag" onClick="location.href='<%= request.getContextPath() %>/insertCart.do?productId=${detail.productId}&userId=${sessionScope.userId}&productQty=2">장바구니 담기</button>
+                       <button class="shoppingBag" onClick="location.href='<%= request.getContextPath() %>/insertCart.do?productId=${detail.productId}&userId=${sessionScope.userId}&productQty=2'">장바구니 담기</button>
                        <button class="shoppingNow">바로 구매하기</button>
                    </div>
                </div>
