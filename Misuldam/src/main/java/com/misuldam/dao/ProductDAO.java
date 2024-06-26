@@ -105,6 +105,31 @@ public class ProductDAO {
 		return list;
 	}
 	
+	//상품 총개수
+	public int productTotal(int categoryNum) {
+        int totalCount = 0;
+        getConnection();
+        
+        String sql = "SELECT COUNT(*) FROM products WHERE category_id = ?";
+        
+        try {
+            psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, categoryNum);
+            rs = psmt.executeQuery(); 
+            
+            if (rs.next()) {
+                totalCount = rs.getInt(1);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close();
+        }
+
+        return totalCount;
+    }
+	
 	
 	
 	//연결 해제(자원 반납)

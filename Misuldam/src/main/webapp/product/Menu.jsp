@@ -35,7 +35,7 @@
 
            <div class="menuList">
                <div class="topUtil">
-                   <div class="total">총 <span>89</span>건</div>
+                   <div class="total">총 <span><c:out value="${productTotal}" /></span>건</div>
                    <div class="searchBtn"><input type="text" placeholder="제품검색"><span class="searchIco"><i class="fas fa-search"></i></span></div>
                </div>
                <ul class="menuCont">

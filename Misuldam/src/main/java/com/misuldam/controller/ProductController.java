@@ -40,7 +40,9 @@ public class ProductController extends HttpServlet{
         	
         	ProductDAO dao = new ProductDAO();
         	List<ProductDTO> list = dao.pruductList(categoryNum);
+        	int productTotal = dao.productTotal(categoryNum);
         	req.setAttribute("productList", list);
+        	req.setAttribute("productTotal", productTotal);
         	
         	if(userId > 0) {
         		PaymentDAO dao2 = new PaymentDAO();
