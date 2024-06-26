@@ -92,6 +92,7 @@
 						<button type="button" class="btn-veri"
 								
 								onclick="memberVerifyMobile.editSendVerificationNumber(); return false;">인증번호받기</button>
+								
 
 						</td>
 						</div>
@@ -108,10 +109,13 @@
 							<input id="birth_day" name="birth_day" fw-filter="isFill" fw-label="생년월일" fw-msg="" class="inputTypeText" placeholder="" maxlength="2" readonly="readonly" value="" type="text"> 일
 					
 						</div>
-						
  
     
-			</div>
+					</div>
+						<hr>
+						<div class="edit_action">
+						<button type="button" class="btnSubmit">회원정보변경</button>			
+						</div>
 			</div>
 
 

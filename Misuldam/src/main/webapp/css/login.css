@@ -122,6 +122,15 @@ button.btn-veri{
 	width : 12%;
 
 }
+button.btnSubmit{
+	text-align: center;
+    width: 10%;
+    background: #f8f7f4;
+    height:36px;
+    margin-top:20px;
+    
+   
+}
 input#new_password {
     margin-left: 34.5px;
 }
@@ -155,9 +164,9 @@ input#new_password {
 	color: #fafcf3;
 	padding: 90px 50px;
 	}
-.ingo_modify h2{
+.info_modify h2{
 	font-size : 25px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     letter-spacing : 1px;
 }
 label{
@@ -168,9 +177,9 @@ label{
 	    margin: 20px;
 }
 .my_id{
-	margin: 20px 0;
+	margin: 25px 0;
 }
-i{
+.my_pw i{
 	display: inline-block;
     width: 8px;
     height: 8px;
@@ -179,7 +188,7 @@ i{
     margin-right: 6px;
 }
 .my_pw,.new_pw,.check_pw,.my_name,.my_cell,.my_email{
-	    margin-bottom: 20px;
+	    margin-bottom: 25px;
 }
 select#phone1{
 	width:50px;
@@ -193,4 +202,46 @@ input#mobile3{
 }
 input#birth_year,input#birth_month,input#birth_day{
 	width:60px;
+}
+a.btnSubmit {
+    color: #f8f7f4;
+}
+
+.mypage_account {
+	margin-bottom:20px;
+    border: 1px solid;
+    height: 60px;
+    width: 60%;
+}
+.memberInfo li {
+    padding: 2px;
+    margin: 10px;
+}
+a:visited {
+    color: #f8f7f4;
+    text-decoration: none;
+}
+.my_order{
+	margin-bottom:10px;
+}
+ul.order {
+    overflow: hidden;
+    padding: 18px 0 20px;
+    border-top: 1px solid #f8f7f4;
+    border-bottom:1px solid #f8f7f4;
+    display: flex;
+    justify-content: center;
+}
+span.desc {
+    color: #e6e2e2;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.state .order li {
+	text-align:center;
+	width: calc(100% / 4);
+}
+.state .order li span{display:block;padding-top:15px}
+.state{
+	width: 60%;
 }

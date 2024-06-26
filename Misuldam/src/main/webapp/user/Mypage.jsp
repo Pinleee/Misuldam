@@ -32,10 +32,43 @@
 			</div>
 
 			<div class="info_modify">
-			
-			
-			</div>
+						<h2>MY ACCOUNT</h2>
+			<div class="mypage_account ">
+			<div class="info">
+                <div class="memberInfo">
+                    <ul>
+						<li><a href=""><strong class="name">MEMBERSHIP</strong> : <strong class="group"><span class="xans-member-var-group_name">WHITE</span><span class="myshop_benefit_ship_free_message"> / 배송비 무료</span> </strong></a></li>
+                    </ul>
+				</div>
+              
+			</div>	
 		</div>
-	</div>
+		<div class="my_order">
+		<h1>나의 주문 내역<span class="desc">(최근 3개월 기준)</span></h1>
+		
+		
+		</div>
+		<div class="state">
+		<ul class="order">
+			<li>
+			<a href=""><strong>입금전</strong>
+			<br><span class="count">0</span></a>
+			</li>
+			<li>
+				<a href=""><strong>배송준비중</strong>
+			<br><span class="count">0</span></a>
+			</li>
+			<li>
+			<a href=""><strong>배송중</strong>
+			<br><span class="count">0</span></a>
+			</li>
+			<li><a href=""><strong>배송완료</strong>
+			<br><span class="count">0</span></a>
+			</li>
+		</ul>
+		</div>
+</div>
+</div>
+</div>
 </div>
 <jsp:include page="/include/Footer.jsp" />
