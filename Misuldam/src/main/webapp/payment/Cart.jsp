@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="/include/Header.jsp" />
 <link href="${pageContext.request.contextPath}/css/Payment.css" rel="stylesheet" />
-
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="subCont">
    <div class="catagWrap">
        <div class="catagCont">
@@ -29,42 +30,44 @@
                         <td>배송비</td>
                     </tr>
                 </thead>
+              <c:forEach var="cart" items="${cartlist}">
                 <tbody>
                     <tr class="cart__list__detail">
                         <td><button class="cart-minus"><i class="fas fa-minus-circle"></i></button></td>
-                        <td><img src="${pageContext.request.contextPath}/images/assort03.jpg"></td>
-                        <td><a href="#">증류주</a>
-                            <p class="pro_name">일품진로 (17도) / 1개</p>
-                            <sapn class="price">14,500원</sapn>
+                        <td><img src="${pageContext.request.contextPath}/images/product/${cart.product.image}"></td>
+                        <td>
+                        	 <c:choose>
+	                           	<c:when test="${cart.product.category_id == 1}">
+				       				<a>탁주</a>
+				       			</c:when>
+				       			<c:when test="${cart.product.category_id == 2}">
+				       				<a>약 · 청주</a>
+				       			</c:when>
+				       			<c:when test="${cart.product.category_id == 3}">
+				       				<a>증류주</a>
+				       			</c:when>
+				       			<c:when test="${cart.product.category_id == 4}">
+				       				<a>과실주</a>
+				       			</c:when>
+				       			<c:when test="${cart.product.category_id == 5}">
+				       				<a>기타주류</a>
+				       			</c:when>
+                           </c:choose>
+                            <p class="pro_name">${cart.product.productName }</p>
+                            <sapn class="price"><fmt:formatNumber value="${cart.product.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/>원</sapn>
                         </td>
                         <td class="cart__list__option">
-                            <p>제품명 : 일품진로 (17도)</p>
-                            <input type="button" onclick="" value="-"/>
-                            <input type="text" onclick="" value="1" class="count-box"/>
-                            <input type="button" onclick="" value="+"/>
+                            <p>제품명 : <span>${cart.product.productName }</span></p>
+                            <input type="button" onclick='count("minus")' value='-'/>
+                            <div class="count-box">0</div>
+                            <input type="button" onclick='count("plus")' value='+'/>
                         </td>
                         <td><span class="price">14,500원</span><br>
                         </td>
                         <td>무료</td>
                     </tr>
-                    <tr class="cart__list__detail">
-                        <td style="width: 2%;"><button class="cart-minus"><i class="fas fa-minus-circle"></i></button></td>
-                        <td style="width: 13%;">
-                            <img src="${pageContext.request.contextPath}/images/assort03.jpg">
-                        </td>
-                        <td style="width: 27%;"><a href="#">증류주</a>
-                            <p class="pro_name">일품진로 (23도)</p>
-                            <span class=" price">28,500원</span>
-                        </td>
-                        <td class="cart__list__option" style="width: 27%;">
-                            <p>제품명 : 일품진로 (23도) / 2개</p>
-                            <button class="cart__list__optionbtn">주문조건 추가/변경</button>
-                        </td>
-                        <td style="width: 15%;"><span class="price">57,500원</span><br>
-                        </td>
-                        <td style="width: 15%;">무료</td>
-                    </tr>
                 </tbody>
+               </c:forEach>
                 <tfoot>
                     <tr>
                         <td colspan="3"></td>

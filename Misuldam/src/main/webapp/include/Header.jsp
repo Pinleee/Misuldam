@@ -70,7 +70,7 @@
 						<c:otherwise>
 							<button onClick="location.href='<%= request.getContextPath() %>/user/Mypage.jsp'"><i class="fas fa-user-shield"></i><span>마이페이지</span></button>
 		                    <button onClick="location.href='<%= request.getContextPath() %>/selectWish.do?userId=${sessionScope.userId}'"><i class="fas fa-heart"></i><span>위시리스트</span></button>
-		                    <button onClick="location.href='<%= request.getContextPath() %>/cartList.do?userId=${sessionScope.userId}'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
+		                    <button onClick="location.href='<%= request.getContextPath() %>/selectCart.do?userId=${sessionScope.userId}'"><i class="fas fa-shopping-bag"></i><span>장바구니</span></button>
 		                    <button onClick="location.href='<%= request.getContextPath() %>/user/Logout.jsp'"><i class="fas fa-sign-in-alt"></i><span>로그아웃</span></button>
 						</c:otherwise>
 					</c:choose>                  

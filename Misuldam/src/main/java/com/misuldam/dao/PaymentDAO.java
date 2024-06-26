@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.misuldam.dto.CartItemDTO;
 import com.misuldam.dto.ProductDTO;
 import com.misuldam.dto.WishListItemDTO;
 
@@ -60,7 +61,7 @@ public class PaymentDAO {
 		} finally {
 			close();
 		}
-		System.out.println("DAO:insert dao 성공");
+		System.out.println("DAO:insertWish dao 성공");
 		return result;
 	}
 	// 위시리스트 불러오기
@@ -95,7 +96,7 @@ public class PaymentDAO {
 		} finally {
 			close();
 		}
-		System.out.println("select dao 성공");
+		System.out.println("DAO: selectWish dao 성공");
 		return wishList;
 		
 	}
@@ -140,8 +141,72 @@ public class PaymentDAO {
 		System.out.println("DAO: 위시리스트 검색 성공");
 		return searchLists;
 	}
-	
-	
+	//장바구니 담기
+	public int insertCartLsit(CartItemDTO dto) {
+		getConnection();
+		String checkQuery = "select count(*) from cartitems where user_id = ? and product_id = ?";
+		String insertQuery = "insert into cartitems(user_id,product_id,quantity) values(?,?,?) ";
+		int result = 0;
+		
+		try {
+			psmt = con.prepareStatement(checkQuery);
+			psmt.setInt(1, dto.getUserId());
+			psmt.setInt(2, dto.getProductId());
+			rs = psmt.executeQuery();
+			
+			if(rs.next() && rs.getInt(1)==0) {
+				psmt = con.prepareStatement(insertQuery);
+				psmt.setInt(1, dto.getUserId());
+				psmt.setInt(2, dto.getProductId());
+				psmt.setInt(3, dto.getQuantity());
+				result = psmt.executeUpdate();
+			}else {
+				System.out.println("DAO : 장바구니 중복");
+				result = -1;
+			}
+		} catch (SQLException e) {
+			e.getStackTrace();
+		} finally {
+			close();
+		}
+		System.out.println("DAO:insertCart 성공");
+		return result;
+	}
+	// 장바구니 불러오기
+	public List<CartItemDTO> selectCartList(int userId){
+		List<CartItemDTO> cartList = new ArrayList<>();
+		getConnection();
+		String query = "cartitems.user_id, cartitems.product_id, cartitems.quantity,products.category_id,products.product_name AS product_name,"
+						+ "products.product_description AS product_description, products.product_price AS product_price, products.image_url"
+						+ "FROM cartitems JOIN products ON cartitems.product_id = products.product_id WHERE cartitems.user_id = ?";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setInt(1, userId);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				CartItemDTO cartListItem = new CartItemDTO();
+				cartListItem.setUserId(rs.getInt("user_id"));
+				cartListItem.setProductId(rs.getInt("product_id"));
+				
+				ProductDTO product = new ProductDTO();
+				product.setProductId(rs.getInt("product_id"));
+				product.setCategory_id(rs.getInt("category_id"));
+				product.setProductName(rs.getString("product_name"));
+				product.setDescription(rs.getString("product_description"));
+				product.setProductPrice(rs.getDouble("product_price"));
+				product.setImage(rs.getString("image_url"));
+				
+				cartListItem.setProduct(product);
+				cartList.add(cartListItem);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		System.out.println("DAO: selectCart dao 성공");
+		return cartList;
+	}
 	
 	
 	
