@@ -94,8 +94,8 @@
                
 				<div class="reviewRegister">
 					<h3>리뷰작성하기</h3>
-					<form action="<%= request.getContextPath() %>/review.review?productNum=${sessionScope.productNum}&userId=${sessionScope.userId}" method="post">
-						<span>ID</span><input type="text" class="reviewRegisterId" readonly name="userId"  placeholder="${sessionScope.accountId}"/>
+					<form action="<%= request.getContextPath() %>/review.review?productNum=${sessionScope.productNum}&userId=${sessionScope.userId}&reviewUserId=${sessionScope.accountId}" method="post">
+						<span>ID</span><input type="text" class="reviewRegisterId" readonly name=""  placeholder="${sessionScope.accountId}"/>
 						<textarea class="reviewRegisterTxt" name="comment" placeholder="로그인 후 사용해주세요."></textarea>
 						
 						<input type="hidden"  />

@@ -9,6 +9,8 @@ public class ReviewDTO {
 	private int userId;
 	private String comment;
 	private Timestamp createdAt;
+	private String reviewUserId;
+	
 	public int getReviewId() {
 		return reviewId;
 	}
@@ -38,6 +40,12 @@ public class ReviewDTO {
 	}
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
+	}
+	public String getReviewUserId() {
+		return reviewUserId;
+	}
+	public void setReviewUserId(String reviewUserId) {
+		this.reviewUserId = reviewUserId;
 	}
 	
 	

@@ -32,12 +32,15 @@ public class ReviewController extends HttpServlet{
         	int productNum = Integer.parseInt(req.getParameter("productNum"));
         	int userId = Integer.parseInt(req.getParameter("userId"));
         	String comment = req.getParameter("comment");
+        	String reviewUserId = req.getParameter("reviewUserId");
         	
         	ReviewDTO review = new ReviewDTO();
         	
         	review.setProductId(productNum);
         	review.setUserId(userId);
         	review.setComment(comment);
+        	review.setReviewUserId(reviewUserId);
+        	System.out.println(reviewUserId);
         	
         	ReviewDAO dao = new ReviewDAO();
         	dao.reviewRegister(review);
