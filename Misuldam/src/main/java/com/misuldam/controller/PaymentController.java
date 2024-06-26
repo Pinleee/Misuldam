@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import com.misuldam.dao.PaymentDAO;
+import com.misuldam.dto.CartItemDTO;
 import com.misuldam.dto.PaymentDTO;
 import com.misuldam.dto.WishListItemDTO;
 
@@ -35,30 +36,34 @@ public class PaymentController extends HttpServlet{
 		resp.setContentType("text/html; charset=utf-8");
 	//위시리스트 등록
 		if(path.contains("insertWish")) {
-			int userId = Integer.parseInt(req.getParameter("userId"));
+			String userIdParam = req.getParameter("userId");
+			int userId = 0;
 			int productId = Integer.parseInt(req.getParameter("productId"));
-			
-			
-			WishListItemDTO dto = new WishListItemDTO();
-			dto.setUserId(userId);
-			dto.setProductId(productId);
-			
-			PaymentDAO dao = new PaymentDAO();
-			int result = dao.insertWishList(dto);
-			if(result>0) { // 등록 성공
-				out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');");
-				out.println("history.go(0); </script>"); 
-				//out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');history.go(-1)'</script>");
-			} else if(result == -1){
-				out.println("<script> alert('해당 제품은 이미 등록된 제품입니다..');");
-				out.println("history.go(-1); </script>");
-			}
-			else { // 등록 오류
-				out.println("<script> alert('다시 시도해주시길 바랍니다.');");
-				out.println("history.go(-1); </script>");
-				//out.println("<script> alert('다시 시도해주시길 바랍니다.');history.go(-1)'</script>");
+			if(userIdParam != null && !userIdParam.isEmpty()) {
+				userId = Integer.parseInt(userIdParam);
+				
+				WishListItemDTO dto = new WishListItemDTO();
+				dto.setUserId(userId);
+				dto.setProductId(productId);
+				
+				PaymentDAO dao = new PaymentDAO();
+				int result = dao.insertWishList(dto);
+				if(result>0) { // 등록 성공
+					out.println("<script> alert('해당 제품이 위시리스트에 등록되었습니다.');");
+					out.println("history.go(0); </script>"); 
+				} else if(result == -1){ // 중복
+					out.println("<script> alert('해당 제품은 이미 등록된 제품입니다..');");
+					out.println("history.go(-1); </script>");
 				}
+				else { // 등록 오류
+					out.println("<script> alert('다시 시도해주시길 바랍니다.');");
+					out.println("history.go(-1); </script>");
+					}
+			}else {
+				out.println("<script> alert('로그인이 필요한 서비스입니다.');");
+				out.println("history.go(-1); </script>");
 			}
+		}
 	//위시리스트 불러오기
 		else if(path.contains("selectWish")) {
 			int userId = Integer.parseInt(req.getParameter("userId"));
@@ -88,7 +93,50 @@ public class PaymentController extends HttpServlet{
 				}
 			
 		}
-	
+	//장바구니 등록하기
+		else if(path.contains("insertCart")) {
+			String userIdParam = req.getParameter("userId");
+			int userId = 0;
+			int productQty = Integer.parseInt("productQty"); 
+			int productId = Integer.parseInt(req.getParameter("productId"));
+			if(userIdParam != null && !userIdParam.isEmpty()) {
+				userId = Integer.parseInt(userIdParam);
+				
+				CartItemDTO dto = new CartItemDTO();
+				dto.setUserId(userId);
+				dto.setProductId(productId);
+				dto.setQuantity(productQty);
+				
+				PaymentDAO dao = new PaymentDAO();
+				int result = dao.insertCartLsit(dto);
+				if(result>0) { //등록 성공
+					out.println("<script> alert('해당 제품이 장바구니에 등록되었습니다.');");
+					out.println("history.go(0);</script>");
+				}else if(result == -1) { // 중복
+					out.println("<script> alert('해당 제품은 이미 등록된 제품입니다..');");
+					out.println("history.go(-1); </script>");
+				}else { // 등록 오류
+					out.println("<script> alert('다시 시도해주시길 바랍니다.');");
+					out.println("history.go(-1); </script>");
+					}
+			
+			}else {
+				out.println("<script> alert('로그인이 필요한 서비스입니다.');");
+				out.println("history.go(-1); </script>");
+			}
+		}
+		
+	//장바구니 리스트 불러오기
+		else if(path.contains("selectCart")) {
+			int userId = Integer.parseInt(req.getParameter("userId"));
+			
+			PaymentDAO dao = new PaymentDAO();
+			List<CartItemDTO> cartList = dao.selectCartList(userId);
+			
+			req.setAttribute("cartList", cartList);
+			req.getRequestDispatcher("./payment/Cart.jsp").forward(req, resp);
+			System.out.println("컨트롤러 : 장바구니 불러오기 성공");
+		}
 		
 		
 		

@@ -6,7 +6,14 @@ public class CartItemDTO {
     private int userId;
     private int productId;
     private int quantity;
+    private ProductDTO product;
     
+	public ProductDTO getProduct() {
+		return product;
+	}
+	public void setProduct(ProductDTO product) {
+		this.product = product;
+	}
 	public int getCartItemId() {
 		return cartItemId;
 	}

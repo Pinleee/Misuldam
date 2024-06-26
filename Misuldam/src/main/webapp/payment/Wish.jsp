@@ -35,7 +35,9 @@
 				       				<h4>기타주류</h4>
 				       			</c:when>
                            </c:choose>
+                           <a href="<%=request.getContextPath()%>/Detail.fo?productNum=${wish.product.productId}">
 	                           <h5>${wish.product.productName}</h5>
+                           </a>
 	                           <p><fmt:formatNumber value="${wish.product.productPrice}" type="number" minFractionDigits="0" maxFractionDigits="0"/>원</p>
 	                       </div>
 	                   </li>
