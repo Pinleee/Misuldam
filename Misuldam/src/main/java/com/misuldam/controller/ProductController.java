@@ -6,7 +6,9 @@ import java.util.List;
 
 import com.misuldam.dao.PaymentDAO;
 import com.misuldam.dao.ProductDAO;
+import com.misuldam.dao.ReviewDAO;
 import com.misuldam.dto.ProductDTO;
+import com.misuldam.dto.ReviewDTO;
 import com.misuldam.dto.WishListItemDTO;
 
 import jakarta.servlet.ServletException;
@@ -53,10 +55,17 @@ public class ProductController extends HttpServlet{
         	ProductDAO dao = new ProductDAO();
         	List<ProductDTO> list2 = dao.productDetail(productNum);
         	
+        	//리뷰
+        	ReviewDAO dao2 = new ReviewDAO();
+        	List<ReviewDTO> list3 = dao2.reviewList(productNum);
+        	
         	session = req.getSession();
         	session.setAttribute("productNum", productNum);
         	req.setAttribute("productDetail", list2);
+        	req.setAttribute("reviewList", list3);
+        	
         	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
+        	
         }
         
 		

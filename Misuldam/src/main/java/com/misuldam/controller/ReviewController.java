@@ -25,29 +25,35 @@ public class ReviewController extends HttpServlet{
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html; charset=utf-8");
         
-		
         
         if(path.contains("review")) {
-        	
+        	String userIdParam = req.getParameter("userId");
         	int productNum = Integer.parseInt(req.getParameter("productNum"));
-        	int userId = Integer.parseInt(req.getParameter("userId"));
+        	int userId = 0;
         	String comment = req.getParameter("comment");
         	String reviewUserId = req.getParameter("reviewUserId");
         	
-        	ReviewDTO review = new ReviewDTO();
-        	
-        	review.setProductId(productNum);
-        	review.setUserId(userId);
-        	review.setComment(comment);
-        	review.setReviewUserId(reviewUserId);
-        	System.out.println(reviewUserId);
-        	
-        	ReviewDAO dao = new ReviewDAO();
-        	dao.reviewRegister(review);
-        	System.out.println("컨트롤러: 리뷰 작성 성공");
-        	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
-        	
+        	if(userIdParam != null && !userIdParam.isEmpty()) {
+        		userId = Integer.parseInt(userIdParam);
+	        	ReviewDTO review = new ReviewDTO();
+	        	
+	        	review.setProductId(productNum);
+	        	review.setUserId(userId);
+	        	review.setComment(comment);
+	        	review.setReviewUserId(reviewUserId);
+	        	System.out.println(reviewUserId);
+	        	
+	        	ReviewDAO dao = new ReviewDAO();
+	        	dao.reviewRegister(review);
+	        	System.out.println("컨트롤러: 리뷰 작성 성공");
+	        	req.getRequestDispatcher("./product/Detail.jsp").forward(req, resp);
+        	}
+        	else{
+        		out.println("<script> alert('로그인이 필요한 서비스입니다.');");
+				out.println("history.go(-2); </script>");
+        	}
         }
+       
         
         
 	}

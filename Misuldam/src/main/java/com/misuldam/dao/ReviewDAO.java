@@ -3,11 +3,13 @@ package com.misuldam.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.misuldam.dto.ProductDTO;
 import com.misuldam.dto.ReviewDTO;
 
 public class ReviewDAO {
@@ -55,8 +57,39 @@ public class ReviewDAO {
 		}finally {
 			close();
 		}
-		
 	}
+	
+	//리뷰조회
+	public ArrayList<ReviewDTO> reviewList(int productId){
+		getConnection();
+		ReviewDTO dto = new ReviewDTO();
+		
+		String sql = "select * from reviews where product_id = ?";
+		ArrayList<ReviewDTO> list = new ArrayList<ReviewDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, productId);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				dto = new ReviewDTO();
+				
+				dto.setReviewUserId(rs.getString("review_user_id"));
+				dto.setComment(rs.getString("comment"));
+				list.add(dto);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			close();
+		}
+		
+		return list;
+	}
+	
 		
 		
 	//연결 해제(자원 반납)

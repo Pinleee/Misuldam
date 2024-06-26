@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/include/Header.jsp" />
 
-
 <div class="subCont">
    <div class="detailWrap">
        <div class="detailCont">
@@ -54,13 +53,23 @@
            <div class="reviewWrap">
                <div class="reviewTop"><h3>리뷰</h3></div>
                <ul class="reviewList">
-                   <li>
-                       <div class="reviewId">ID : <span>alkfds</span></div>
-                       <div class="reviewTxt">
-                           <p>처음 마셔보는 제품인데 일단 패키지 부터가 너무 상큼하고 귀여워서 기대하고 구입했어요! 마셔보고 괜찮으면 재구입해보려구요.</p>
-                       </div>
-                   </li>
-                   <li>
+               <c:choose>
+				    <c:when test="${reviewList != null and not empty reviewList}">
+				        <c:forEach var="review" items="${reviewList}">
+				            <li>
+				                <div class="reviewId">ID : <span>${review.reviewUserId}</span></div>
+				                <div class="reviewTxt">
+				                    <p>${review.comment}</p>
+				                </div>
+				            </li>
+				        </c:forEach>
+				    </c:when>
+				    <c:otherwise>
+				        <div class="noReview">등록된 리뷰가 없습니다.</div>
+				    </c:otherwise>
+				</c:choose>
+               		
+                   <!-- <li>
                        <div class="reviewId">ID : <span>01afa2</span></div>
                        <div class="reviewTxt">
                            <p>국가는 농지에 관하여 경자유전의 원칙이 달성될 수 있도록 노력하여야 하며, 농지의 소작제도는 금지된다. 정당은 그 목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다.</p>
@@ -89,7 +98,7 @@
                        <div class="reviewTxt">
                            <p>술 좋아하시는 분에게 선물드렸는데 너무 좋아하셨어요! 전통주 맛볼 수 있어 좋은 것 같아요~</p>
                        </div>
-                   </li>
+                   </li> -->
                </ul>
                
 				<div class="reviewRegister">
