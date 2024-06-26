@@ -38,7 +38,7 @@ public class ReviewDAO {
 		
 		getConnection();
 		
-		String sql = "INSERT INTO reviews(product_id,user_id,comment) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO reviews(product_id,user_id,comment,review_user_id) VALUES (?, ?, ?, ?)";
 		try {
 			
 			psmt = conn.prepareStatement(sql);
@@ -46,6 +46,7 @@ public class ReviewDAO {
 			psmt.setInt(1,dto.getProductId());
 			psmt.setInt(2,dto.getUserId());
 			psmt.setString(3,dto.getComment());
+			psmt.setString(4,dto.getReviewUserId());
 			
 			psmt.executeUpdate();
 		
