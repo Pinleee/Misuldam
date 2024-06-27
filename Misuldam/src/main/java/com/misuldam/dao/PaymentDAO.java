@@ -210,8 +210,24 @@ public class PaymentDAO {
 		System.out.println("DAO: selectCart dao 성공");
 		return cartList;
 	}
-	
-	
+	// 장바구니 삭제
+	public int deleteCartList(int userId, int productId) {
+		getConnection();
+		String query = "DELETE FROM cartitems WHERE user_id = ? AND product_id = ?";
+		int result = 0;
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setInt(1, userId);
+			psmt.setInt(2, productId);
+			result = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		System.out.println("delete dao 성공");
+		return result;
+	}
 	
 	public void close() {	// close를 안 하면 자원낭비가 됨.
 		try {
