@@ -331,3 +331,6 @@ body {
 .count-box{
 	color: #000;
 }
+.count-box{
+	display:inline-block;
+}

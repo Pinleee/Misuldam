@@ -1,7 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="/include/Header.jsp" />
 <link href="${pageContext.request.contextPath}/css/Payment.css" rel="stylesheet" />
+<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<script>
+IMP.init("imp14397622");
 
+function requestPay() {
+  IMP.request_pay({
+	  pg: "html5_inicis.INIpayTest",
+	    pay_method: "card",
+	    merchant_uid: "test_lxvfti8l",
+	    name: "전통주 외 3개 결제",
+	    amount: 78000,
+	    buyer_tel: "010-1234-5678",
+  });
+}
+</script>
 <div class="subCont">
    <div class="catagWrap">
        <div class="catagCont">
@@ -128,7 +142,7 @@
             
         </table>
         <div class="cart__mainbtns pay_mainbtn">
-            <button class="pay__bigorderbtn" onClick="location.href='<%= request.getContextPath() %>/payment/Payment.jsp'">결제하기</button>
+            <button class="pay__bigorderbtn" onClick="requestPay()">결제하기</button>
         </div>
     </section>
 

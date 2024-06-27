@@ -30,10 +30,10 @@
                         <td>배송비</td>
                     </tr>
                 </thead>
-              <c:forEach var="cart" items="${cartlist}">
+              <c:forEach var="cart" items="${cartList}">
                 <tbody>
                     <tr class="cart__list__detail">
-                        <td><button class="cart-minus"><i class="fas fa-minus-circle"></i></button></td>
+                        <td><button class="cart-minus" onclick="location.href='<%= request.getContextPath() %>/deleteCart.do?userId=${sessionScope.userId}&productId=${cart.product.productId }'"><i class="fas fa-minus-circle"></i></button></td>
                         <td><img src="${pageContext.request.contextPath}/images/product/${cart.product.image}"></td>
                         <td>
                         	 <c:choose>
@@ -59,7 +59,7 @@
                         <td class="cart__list__option">
                             <p>제품명 : <span>${cart.product.productName }</span></p>
                             <input type="button" onclick='count("minus")' value='-'/>
-                            <div class="count-box">0</div>
+                            <div class="count-box" id="volumeTotal">0</div>
                             <input type="button" onclick='count("plus")' value='+'/>
                         </td>
                         <td><span class="price">14,500원</span><br>

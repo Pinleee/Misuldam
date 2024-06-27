@@ -137,7 +137,25 @@ public class PaymentController extends HttpServlet{
 			req.getRequestDispatcher("./payment/Cart.jsp").forward(req, resp);
 			System.out.println("컨트롤러 : 장바구니 불러오기 성공");
 		}
-		
+	//장바구니 삭제하기
+		else if(path.contains("deleteCart")) {
+			int userId = Integer.parseInt(req.getParameter("userId"));
+			int productId = Integer.parseInt(req.getParameter("productId"));
+			int result = 0;
+			
+			PaymentDAO dao = new PaymentDAO();
+			result = dao.deleteCartList(userId, productId);
+			
+			if(result>0) { // 삭제 성공
+				out.println("<script> alert('해당 제품이 장바구니에서 삭제되었습니다.');");
+				req.setAttribute("userId", userId);
+				req.getRequestDispatcher("./selectCart.do").forward(req, resp);
+			}else { // 등록 오류
+				out.println("<script> alert('다시 시도해주시길 바랍니다.');");
+				out.println("history.go(-1); </script>");
+				}
+			
+		}	
 		
 		
 		
