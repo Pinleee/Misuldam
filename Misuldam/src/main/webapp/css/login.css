@@ -110,6 +110,18 @@ h2{
 	font-size: 20px;
 	cursor: pointer;
 }
+button#edit-action{text-align: center;
+	width: 20%;
+	height: 50px;
+	margin: 10px 10px;
+	color: #fff;
+	background: #c5a87f;
+	border: none;
+	border-radius: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	
+}
 button.btn-edit{
 	text-align: center;
     width: 8%;

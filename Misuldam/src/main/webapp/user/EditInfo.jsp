@@ -113,9 +113,11 @@
     
 					</div>
 						<hr>
-						<div class="edit_action">
-						<button type="button" class="btnSubmit">회원정보변경</button>			
-						</div>
+						 <div class="edit_action">
+	                 <button id="edit-action" type="submit">회원정보변경</button>
+	                
+	            </div>
+					
 			</div>
 
 
